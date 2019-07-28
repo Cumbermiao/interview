@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>http://a.buyer.test.com</h1>
+</body>
+<script src="./cookie.js"></script>
+<script>
+document.domain = 'test.com';
+docCookies.setItem('a.buyer.test.com','from a.buyer.test.com',3600,'/','test.com');
+console.log(document.cookie);
+</script>
+</html>

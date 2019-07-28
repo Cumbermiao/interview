@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<script src="./jquery.js"></script>
+
+<body>
+  <button onclick="send()">send jsonp</button>
+</body>
+<script>
+function createJsonp(url,callback){
+  var script = document.createElement('script');
+  script.src = url;
+  script.onload = script.onreadystatechange = function(e){
+    callback()
+  }
+  document.body.append(script)
+  
+}
+
+function foo(data){
+  console.log('data',data)
+  return data
+}
+
+function send(){
+  // createJsonp('http://localhost:3000/getData?callback=foo',function(res){
+  //   console.log('res',res)
+  // })
+  $.ajax({
+    dataType:'jsonp',
+    jsonp: 'jsoncallback',
+    url:'http://localhost:3000/getData',
+    success:function(res){
+      debugger;
+      console.log(res)
+    }
+  })
+}
+</script>
+</html>
