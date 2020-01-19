@@ -1,0 +1,40 @@
+{
+  "name": "repo-template",
+  "version": "1.0.0",
+  "description": "",
+  "browser": "src/app.es6",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel src/app.es6 --out-file main_bundle.js",
+    "start": "parcel src/index.html",
+    "build": "parcel build src/app.es6 --out-file main_bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "cumbermiao:Cubmbermiao/skr-template.git"
+  },
+  "author": "miaoxiongtao",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "chalk": "^2.4.2",
+    "cross-env": "^5.2.0",
+    "node-sass": "^4.12.0",
+    "parcel-bundler": "^1.12.3",
+    "sass": "^1.22.5",
+    "sass-loader": "^8.0.0",
+    "util": "^0.12.1"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.4.5",
+    "@babel/template": "^7.6.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1"
+  }
+}

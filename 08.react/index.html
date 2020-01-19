@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"><h1>test</h1></div>
+  <div id="root">
+    <span>root</span>
+  </div>
+</body>
+<script src="./react.js"></script>
+<script src="./react-dom.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script type="text/babel">
+class App extends React.Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      count:1,
+      showName:true
+    }
+  }
+
+  render(){
+    return (
+      <div>
+        <button onClick={()=>{
+            this.setState({count:this.state.count+1})
+        }}> Click </button>
+        <p>{this.state.count}</p>
+        <div>
+          <button onClick={()=>this.setState({showName:!this.state.showName})}> toggle name</button>
+          {
+            this.state.showName &&
+            <p> App </p>
+          }
+        </div>
+      </div>
+    )
+  }
+}
+ReactDOM.render(<App/>,document.getElementById('app'));
+console.dir(App)
+console.dir(React)
+</script>
+
+</html>

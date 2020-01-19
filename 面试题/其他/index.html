@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //1. JS new 过程中发生了什么
+
+    //2. 分析下面代码的输出
+    function Person() { }
+
+    var p1 = new Person();
+
+    Person.prototype.sex = 'man';
+    Person.prototype = { sex: 'woman' };
+
+    var p2 = new Person();
+
+    console.log(p1.sex);
+    console.log(p2.sex);
+
+
+    //2-1 变动上面代码，分析输出
+    function Person() { }
+
+    var p1 = new Person();
+
+    Person.prototype.sex = 'man';
+    Person.prototype.sex = 'woman';
+
+    var p2 = new Person();
+
+    console.log(p1.sex);
+    console.log(p2.sex);
+
+
+    // 3. 
+    var a1 = String('A');
+    var a2 = new String('A');
+    var a3 = 'A';
+
+    console.log(a1 === a2);
+    console.log(a1 === a3);
+    console.log(a2 === a3);
+
+
+    //4 写一个 0-100 的正则
+
+    //5 使下面输出
+    if(a==1&&a==2&&a==3){
+      console.log('it works!')
+    }
+  </script>
+
+
+
+
+
+  <!-- answer -->
+
+  <script>
+    //1 
+    // 第一步 创建一个以当前函数为原型的空对象 obj。
+    // 第二步 将函数的 prototype 赋值给对象obj的 __proto__ 属性。
+    // 第三步 将函数的 this 绑定至 obj ， 执行函数
+    // 第四步 如果有 return 出来东西是对象的话就直接返回该对象，如果不是就返回创建的这个对象。
+
+
+    //2
+    /*
+    *   本题考察的实际上是 new 的过程中， Person.prototyoe 会被赋值给 Person实例的 __proto__ , Person.prototype = {} , Person.prototype 指向被改变，
+    *   但是 p1 实例的 __proto__ 仍是 {sex:'man'}
+    */
+
+
+    //3
+    /**
+     *    本题需要区分 字符串 和 字符串对象, String(a) 用来将 a 转换成字符串， new String(a) 则是创建了一个字符串对象
+    **/
+
+
+    //4 
+    let regx = /^(\d|[1-9]\d|100)$/
+
+
+    //5 改题思路主要有两种： 一是在 toPrimitive 这种上做手脚， 二是在 变量名称上面做手脚
+    //1 引用类型在比较时会调用 toPrimitive ， 修改 valueOf
+    var a = {
+      value:1,
+      vaueOf:function(){
+        return this.value++
+      }
+    }
+
+    //2 同样， array 的 toPrimitive 在调用 toString 时会使用 join 方法
+    var a = [1,2,3]
+    a.join = a.shift;
+
+    //3 变量可以使用 Unicode 码， \u0061 是字符 a
+    //TODO: 为什么有的 unicode 吗不能合并作为变量名
+    // var \u0061 = 1;
+    // var a = 2;
+    // if(\u0061==1&&a==2){}
+    
+
+  </script>
+</body>
+
+</html>

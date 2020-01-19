@@ -1,0 +1,8 @@
+小红书： css-module的实现原理，vue的scope怎么实现的。
+七牛：babel配置的modules 为false有没有影响，对js的tree-shaking有没有影响， fiber的原理。webpack-dev-server的原理。
+携程： dns劫持怎么做的，fiber的原理。
+
+小红书，还追问了， 为什么vue里面引入组件之后，需要在components里面在写一次，而react不需要
+
+ useBuiltIns的配置，对打包有什么影响？
+如果启动动态的 prolyfill(佳哥以前说的 根据UA返回的动态的PRolyfill)， 加载顺序是什么样子的

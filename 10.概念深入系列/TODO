@@ -1,0 +1,4 @@
+- [x] 闭包措辞完善
+- [] 防抖与节流
+- [] 数组去重， 考虑 null NaN undefined 等
+- [] Promise

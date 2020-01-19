@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+function func(item){
+  console.log(item);
+}
+
+//Uncaught SyntaxError: await is only valid in async function
+// async function processArray(arr){
+//   arr.forEach(item => {
+//     await func(item)
+//   });
+// }
+
+async function processArray(arr){
+  arr.forEach(async item => {
+    console.log('before await')
+    await func(item)
+  });
+}
+
+
+processArray([1,2,3,4])
+
+</script>
+</html>

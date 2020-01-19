@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header>从 performance 看性能</header>
+  <aside> aside 内容</aside>
+  <div class="main">
+    <div class="abs">abs 元素</div>
+    <div class="compositor"> compositor 元素 </div>
+    <div class="content">
+      主体内容
+      <section> section1 </section>
+      <section> section2 </section>
+    </div>
+  </div>
+  <footer> 页脚 </footer>
+  <script>
+  console.log('start')
+  console.log('111');
+  requestAnimationFrame(()=>{
+    console.log('next frame')
+  })
+  new Promise((resolve,reject)=>{
+    console.log('resolve');
+    resolve();
+  }).then(()=>{
+    console.log('then')
+  }).catch(()=>{
+    console.log('catch')
+  }).finally(()=>{
+    console.log('finally')
+  })
+  
+  
+  
+  </script>
+</body>
+</html>
