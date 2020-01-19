@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //1 请分析以下代码执行结果
+    ['1', '3', '10'].map(parseInt);
+
+
+    //2
+    var number = 10;
+    function fn() {
+      console.log(this.number);
+    }
+    var obj = {
+      number: 2,
+      show: function (fn) {
+        this.number = 3;
+        fn();
+        arguments[0]();
+      }
+    };
+    obj.show(fn);
+
+
+    //3
+    //   <style>
+    //     .outer {
+    //       width: 200px;
+    //      height: 100px;
+    //    }
+    //    .inner {
+    //       width: 60px;
+    //       height: 60px;
+    //       padding-top: 20%;
+    //    }
+    //  </style>
+    //     <div class="outer"><div class="inner"></div></div>
+
+
+
+    // 4 手写一个深拷贝函数。 参考 coreLib
+
+
+    // 5 HTTP 状态码 301 302 304 403。
+
+
+    // 6 手写发布订阅模式 EventEmitter。 参考 coreLib 中的 broadcast
+
+
+    // 7 手写一个多表查询的 sql 语句
+
+
+    // 8 react 高阶函数的写法，通常有哪几种  
+
+
+    // 9 delete 数组的 item，数组的 length 是否会 -1
+
+
+    // 10 mongoDB 中的 BSON 是什么
+
+
+    // 11 关系型数据库和 nosql 查询效率谁高
+
+
+    // 12 使用 node app.js 开启服务，如何让它在后台运行
+
+
+    // 13 尽可能写出更多的数组副作用方法。
+
+    //三面
+    // 1 实现一个周岁函数，例如 fn('2018-8-8') 输出 1，只要是过了生日就 +1。
+    // 2 不断优化刚才实现的函数，用尽一切办法，多问一问还有吗？跳出自己的固定思维圈。
+  </script>
+
+
+
+
+
+  <script>
+    /**
+     *  1
+     *  考察的是 map 以及 parseInt 的用法， map((item,idx,arr)=>{}) 返回一个数组， 往函数里传递三个参数
+     *  parseInt(string,radix) , 会忽略 string 的空格，不规范的格式回去前面规范的一段； radix 是进制，默认为 十进制， 范围应该为 2~36, 为0时认为是10进制， 其他的都返回 NaN
+    */
+
+
+
+    /**
+     *  2
+     *  考察的主要是 this 指向， 其中需要注意的就是 arguments[0]() 调用时 this 指向谁。
+     *  刚开始我将 arguments[0]() 调用理解成 var fn = arguments[0]; fn();
+     *  实际上 arguments[0]() 调用 this 指向的是 arguments ， 解释为 arguments 是一个可迭代(iterator)对象， 调用时 this 与 obj.fn() 是类似的。
+     *  后来又试了一下数组， 结果 arr[0]() 调用的 this 指向的还是 arr。
+    */
+
+
+
+
+    /**
+     *  3
+     *  考察的是 padding 的百分比是相对于 父元素的
+     *  其实感觉跟盒模型也有关， 如果是 border-box 那么应该高度还是 60。
+    */
+
+
+    /**
+     *  5
+     *  301 永久重定向
+     *  302 临时重定向
+     *  304 从缓存读取 Not Modified
+     *  401 未认证 Unauthorized
+     *  403 无权限 Forbidden
+    */
+
+
+    /**
+     *  8
+     *  这个问题问的就很奇怪， react 高阶组件官方解释为：
+     *  高阶组件（HOC）是 React 中用于复用组件逻辑的一种高级技巧。HOC 自身不是 React API 的一部分，它是一种基于 React 的组合特性而形成的设计模式。
+     *  具体而言，高阶组件是参数为组件，返回值为新组件的函数。
+     * 
+     *  总结上面的解释就是高阶组件是为了复用组件， 我们通过传递不同的参数展示展示不同的UI
+     *  常规情况下我们一般通过工厂函数的方式
+     *  function enHancedComponent(component){
+     *    return  newComponent 
+     *  }
+     * 
+     *  还可以通过反向继承的方式
+     *  function enHancedComponent(component){
+     *    return class NewComponent extends component{
+     *      render(){
+     *        return super.render()
+     *      }  
+     *    }
+     *  }
+     * 
+    */
+
+
+
+
+  /**
+   *  9 
+   *  delete 可以用来删除对象的某个属性， 如 delete obj.name ， 删除了 name 属性之后， obj 便不再拥有 name 属性
+   *  delete 删除数组的元素时 如 delete arr[0] , 此时 索引为0的位置为 empty , 数组的长度不会减小， 猜测是由于数组中的内存时连续的原因。
+  */
+
+
+  /**
+   *  13
+   *  pop push shift unshift splice concat fill sort 
+  */
+  </script>
+</body>
+
+</html>

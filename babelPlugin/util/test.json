@@ -1,0 +1,6143 @@
+{
+  "version": "7.4.5",
+  "DEFAULT_EXTENSIONS": [
+    ".js",
+    ".jsx",
+    ".es6",
+    ".es",
+    ".mjs"
+  ],
+  "types": {
+    "react": {},
+    "EXPRESSION_TYPES": [
+      "ArrayExpression",
+      "AssignmentExpression",
+      "BinaryExpression",
+      "CallExpression",
+      "ConditionalExpression",
+      "FunctionExpression",
+      "Identifier",
+      "StringLiteral",
+      "NumericLiteral",
+      "NullLiteral",
+      "BooleanLiteral",
+      "RegExpLiteral",
+      "LogicalExpression",
+      "MemberExpression",
+      "NewExpression",
+      "ObjectExpression",
+      "SequenceExpression",
+      "ParenthesizedExpression",
+      "ThisExpression",
+      "UnaryExpression",
+      "UpdateExpression",
+      "ArrowFunctionExpression",
+      "ClassExpression",
+      "MetaProperty",
+      "Super",
+      "TaggedTemplateExpression",
+      "TemplateLiteral",
+      "YieldExpression",
+      "TypeCastExpression",
+      "JSXElement",
+      "JSXFragment",
+      "AwaitExpression",
+      "BindExpression",
+      "OptionalMemberExpression",
+      "PipelinePrimaryTopicReference",
+      "OptionalCallExpression",
+      "Import",
+      "DoExpression",
+      "BigIntLiteral",
+      "TSAsExpression",
+      "TSTypeAssertion",
+      "TSNonNullExpression"
+    ],
+    "BINARY_TYPES": [
+      "BinaryExpression",
+      "LogicalExpression"
+    ],
+    "SCOPABLE_TYPES": [
+      "BlockStatement",
+      "CatchClause",
+      "DoWhileStatement",
+      "ForInStatement",
+      "ForStatement",
+      "FunctionDeclaration",
+      "FunctionExpression",
+      "Program",
+      "ObjectMethod",
+      "SwitchStatement",
+      "WhileStatement",
+      "ArrowFunctionExpression",
+      "ClassDeclaration",
+      "ClassExpression",
+      "ForOfStatement",
+      "ClassMethod",
+      "ClassPrivateMethod"
+    ],
+    "BLOCKPARENT_TYPES": [
+      "BlockStatement",
+      "CatchClause",
+      "DoWhileStatement",
+      "ForInStatement",
+      "ForStatement",
+      "FunctionDeclaration",
+      "FunctionExpression",
+      "Program",
+      "ObjectMethod",
+      "SwitchStatement",
+      "WhileStatement",
+      "ArrowFunctionExpression",
+      "ForOfStatement",
+      "ClassMethod",
+      "ClassPrivateMethod"
+    ],
+    "BLOCK_TYPES": [
+      "BlockStatement",
+      "Program"
+    ],
+    "STATEMENT_TYPES": [
+      "BlockStatement",
+      "BreakStatement",
+      "ContinueStatement",
+      "DebuggerStatement",
+      "DoWhileStatement",
+      "EmptyStatement",
+      "ExpressionStatement",
+      "ForInStatement",
+      "ForStatement",
+      "FunctionDeclaration",
+      "IfStatement",
+      "LabeledStatement",
+      "ReturnStatement",
+      "SwitchStatement",
+      "ThrowStatement",
+      "TryStatement",
+      "VariableDeclaration",
+      "WhileStatement",
+      "WithStatement",
+      "ClassDeclaration",
+      "ExportAllDeclaration",
+      "ExportDefaultDeclaration",
+      "ExportNamedDeclaration",
+      "ForOfStatement",
+      "ImportDeclaration",
+      "DeclareClass",
+      "DeclareFunction",
+      "DeclareInterface",
+      "DeclareModule",
+      "DeclareModuleExports",
+      "DeclareTypeAlias",
+      "DeclareOpaqueType",
+      "DeclareVariable",
+      "DeclareExportDeclaration",
+      "DeclareExportAllDeclaration",
+      "InterfaceDeclaration",
+      "OpaqueType",
+      "TypeAlias",
+      "TSDeclareFunction",
+      "TSInterfaceDeclaration",
+      "TSTypeAliasDeclaration",
+      "TSEnumDeclaration",
+      "TSModuleDeclaration",
+      "TSImportEqualsDeclaration",
+      "TSExportAssignment",
+      "TSNamespaceExportDeclaration"
+    ],
+    "TERMINATORLESS_TYPES": [
+      "BreakStatement",
+      "ContinueStatement",
+      "ReturnStatement",
+      "ThrowStatement",
+      "YieldExpression",
+      "AwaitExpression"
+    ],
+    "COMPLETIONSTATEMENT_TYPES": [
+      "BreakStatement",
+      "ContinueStatement",
+      "ReturnStatement",
+      "ThrowStatement"
+    ],
+    "CONDITIONAL_TYPES": [
+      "ConditionalExpression",
+      "IfStatement"
+    ],
+    "LOOP_TYPES": [
+      "DoWhileStatement",
+      "ForInStatement",
+      "ForStatement",
+      "WhileStatement",
+      "ForOfStatement"
+    ],
+    "WHILE_TYPES": [
+      "DoWhileStatement",
+      "WhileStatement"
+    ],
+    "EXPRESSIONWRAPPER_TYPES": [
+      "ExpressionStatement",
+      "ParenthesizedExpression",
+      "TypeCastExpression"
+    ],
+    "FOR_TYPES": [
+      "ForInStatement",
+      "ForStatement",
+      "ForOfStatement"
+    ],
+    "FORXSTATEMENT_TYPES": [
+      "ForInStatement",
+      "ForOfStatement"
+    ],
+    "FUNCTION_TYPES": [
+      "FunctionDeclaration",
+      "FunctionExpression",
+      "ObjectMethod",
+      "ArrowFunctionExpression",
+      "ClassMethod",
+      "ClassPrivateMethod"
+    ],
+    "FUNCTIONPARENT_TYPES": [
+      "FunctionDeclaration",
+      "FunctionExpression",
+      "ObjectMethod",
+      "ArrowFunctionExpression",
+      "ClassMethod",
+      "ClassPrivateMethod"
+    ],
+    "PUREISH_TYPES": [
+      "FunctionDeclaration",
+      "FunctionExpression",
+      "StringLiteral",
+      "NumericLiteral",
+      "NullLiteral",
+      "BooleanLiteral",
+      "ArrowFunctionExpression",
+      "ClassDeclaration",
+      "ClassExpression",
+      "BigIntLiteral"
+    ],
+    "DECLARATION_TYPES": [
+      "FunctionDeclaration",
+      "VariableDeclaration",
+      "ClassDeclaration",
+      "ExportAllDeclaration",
+      "ExportDefaultDeclaration",
+      "ExportNamedDeclaration",
+      "ImportDeclaration",
+      "DeclareClass",
+      "DeclareFunction",
+      "DeclareInterface",
+      "DeclareModule",
+      "DeclareModuleExports",
+      "DeclareTypeAlias",
+      "DeclareOpaqueType",
+      "DeclareVariable",
+      "DeclareExportDeclaration",
+      "DeclareExportAllDeclaration",
+      "InterfaceDeclaration",
+      "OpaqueType",
+      "TypeAlias",
+      "TSDeclareFunction",
+      "TSInterfaceDeclaration",
+      "TSTypeAliasDeclaration",
+      "TSEnumDeclaration",
+      "TSModuleDeclaration"
+    ],
+    "PATTERNLIKE_TYPES": [
+      "Identifier",
+      "RestElement",
+      "AssignmentPattern",
+      "ArrayPattern",
+      "ObjectPattern"
+    ],
+    "LVAL_TYPES": [
+      "Identifier",
+      "MemberExpression",
+      "RestElement",
+      "AssignmentPattern",
+      "ArrayPattern",
+      "ObjectPattern",
+      "TSParameterProperty"
+    ],
+    "TSENTITYNAME_TYPES": [
+      "Identifier",
+      "TSQualifiedName"
+    ],
+    "LITERAL_TYPES": [
+      "StringLiteral",
+      "NumericLiteral",
+      "NullLiteral",
+      "BooleanLiteral",
+      "RegExpLiteral",
+      "TemplateLiteral",
+      "BigIntLiteral"
+    ],
+    "IMMUTABLE_TYPES": [
+      "StringLiteral",
+      "NumericLiteral",
+      "NullLiteral",
+      "BooleanLiteral",
+      "JSXAttribute",
+      "JSXClosingElement",
+      "JSXElement",
+      "JSXExpressionContainer",
+      "JSXSpreadChild",
+      "JSXOpeningElement",
+      "JSXText",
+      "JSXFragment",
+      "JSXOpeningFragment",
+      "JSXClosingFragment",
+      "BigIntLiteral"
+    ],
+    "USERWHITESPACABLE_TYPES": [
+      "ObjectMethod",
+      "ObjectProperty",
+      "ObjectTypeInternalSlot",
+      "ObjectTypeCallProperty",
+      "ObjectTypeIndexer",
+      "ObjectTypeProperty",
+      "ObjectTypeSpreadProperty"
+    ],
+    "METHOD_TYPES": [
+      "ObjectMethod",
+      "ClassMethod",
+      "ClassPrivateMethod"
+    ],
+    "OBJECTMEMBER_TYPES": [
+      "ObjectMethod",
+      "ObjectProperty"
+    ],
+    "PROPERTY_TYPES": [
+      "ObjectProperty",
+      "ClassProperty",
+      "ClassPrivateProperty"
+    ],
+    "UNARYLIKE_TYPES": [
+      "UnaryExpression",
+      "SpreadElement"
+    ],
+    "PATTERN_TYPES": [
+      "AssignmentPattern",
+      "ArrayPattern",
+      "ObjectPattern"
+    ],
+    "CLASS_TYPES": [
+      "ClassDeclaration",
+      "ClassExpression"
+    ],
+    "MODULEDECLARATION_TYPES": [
+      "ExportAllDeclaration",
+      "ExportDefaultDeclaration",
+      "ExportNamedDeclaration",
+      "ImportDeclaration"
+    ],
+    "EXPORTDECLARATION_TYPES": [
+      "ExportAllDeclaration",
+      "ExportDefaultDeclaration",
+      "ExportNamedDeclaration"
+    ],
+    "MODULESPECIFIER_TYPES": [
+      "ExportSpecifier",
+      "ImportDefaultSpecifier",
+      "ImportNamespaceSpecifier",
+      "ImportSpecifier",
+      "ExportDefaultSpecifier",
+      "ExportNamespaceSpecifier"
+    ],
+    "FLOW_TYPES": [
+      "AnyTypeAnnotation",
+      "ArrayTypeAnnotation",
+      "BooleanTypeAnnotation",
+      "BooleanLiteralTypeAnnotation",
+      "NullLiteralTypeAnnotation",
+      "ClassImplements",
+      "DeclareClass",
+      "DeclareFunction",
+      "DeclareInterface",
+      "DeclareModule",
+      "DeclareModuleExports",
+      "DeclareTypeAlias",
+      "DeclareOpaqueType",
+      "DeclareVariable",
+      "DeclareExportDeclaration",
+      "DeclareExportAllDeclaration",
+      "DeclaredPredicate",
+      "ExistsTypeAnnotation",
+      "FunctionTypeAnnotation",
+      "FunctionTypeParam",
+      "GenericTypeAnnotation",
+      "InferredPredicate",
+      "InterfaceExtends",
+      "InterfaceDeclaration",
+      "InterfaceTypeAnnotation",
+      "IntersectionTypeAnnotation",
+      "MixedTypeAnnotation",
+      "EmptyTypeAnnotation",
+      "NullableTypeAnnotation",
+      "NumberLiteralTypeAnnotation",
+      "NumberTypeAnnotation",
+      "ObjectTypeAnnotation",
+      "ObjectTypeInternalSlot",
+      "ObjectTypeCallProperty",
+      "ObjectTypeIndexer",
+      "ObjectTypeProperty",
+      "ObjectTypeSpreadProperty",
+      "OpaqueType",
+      "QualifiedTypeIdentifier",
+      "StringLiteralTypeAnnotation",
+      "StringTypeAnnotation",
+      "ThisTypeAnnotation",
+      "TupleTypeAnnotation",
+      "TypeofTypeAnnotation",
+      "TypeAlias",
+      "TypeAnnotation",
+      "TypeCastExpression",
+      "TypeParameter",
+      "TypeParameterDeclaration",
+      "TypeParameterInstantiation",
+      "UnionTypeAnnotation",
+      "Variance",
+      "VoidTypeAnnotation"
+    ],
+    "FLOWTYPE_TYPES": [
+      "AnyTypeAnnotation",
+      "ArrayTypeAnnotation",
+      "BooleanTypeAnnotation",
+      "BooleanLiteralTypeAnnotation",
+      "NullLiteralTypeAnnotation",
+      "ExistsTypeAnnotation",
+      "FunctionTypeAnnotation",
+      "GenericTypeAnnotation",
+      "InterfaceTypeAnnotation",
+      "IntersectionTypeAnnotation",
+      "MixedTypeAnnotation",
+      "EmptyTypeAnnotation",
+      "NullableTypeAnnotation",
+      "NumberLiteralTypeAnnotation",
+      "NumberTypeAnnotation",
+      "ObjectTypeAnnotation",
+      "StringLiteralTypeAnnotation",
+      "StringTypeAnnotation",
+      "ThisTypeAnnotation",
+      "TupleTypeAnnotation",
+      "TypeofTypeAnnotation",
+      "UnionTypeAnnotation",
+      "VoidTypeAnnotation"
+    ],
+    "FLOWBASEANNOTATION_TYPES": [
+      "AnyTypeAnnotation",
+      "BooleanTypeAnnotation",
+      "NullLiteralTypeAnnotation",
+      "MixedTypeAnnotation",
+      "EmptyTypeAnnotation",
+      "NumberTypeAnnotation",
+      "StringTypeAnnotation",
+      "ThisTypeAnnotation",
+      "VoidTypeAnnotation"
+    ],
+    "FLOWDECLARATION_TYPES": [
+      "DeclareClass",
+      "DeclareFunction",
+      "DeclareInterface",
+      "DeclareModule",
+      "DeclareModuleExports",
+      "DeclareTypeAlias",
+      "DeclareOpaqueType",
+      "DeclareVariable",
+      "DeclareExportDeclaration",
+      "DeclareExportAllDeclaration",
+      "InterfaceDeclaration",
+      "OpaqueType",
+      "TypeAlias"
+    ],
+    "FLOWPREDICATE_TYPES": [
+      "DeclaredPredicate",
+      "InferredPredicate"
+    ],
+    "JSX_TYPES": [
+      "JSXAttribute",
+      "JSXClosingElement",
+      "JSXElement",
+      "JSXEmptyExpression",
+      "JSXExpressionContainer",
+      "JSXSpreadChild",
+      "JSXIdentifier",
+      "JSXMemberExpression",
+      "JSXNamespacedName",
+      "JSXOpeningElement",
+      "JSXSpreadAttribute",
+      "JSXText",
+      "JSXFragment",
+      "JSXOpeningFragment",
+      "JSXClosingFragment"
+    ],
+    "PRIVATE_TYPES": [
+      "ClassPrivateProperty",
+      "ClassPrivateMethod",
+      "PrivateName"
+    ],
+    "TSTYPEELEMENT_TYPES": [
+      "TSCallSignatureDeclaration",
+      "TSConstructSignatureDeclaration",
+      "TSPropertySignature",
+      "TSMethodSignature",
+      "TSIndexSignature"
+    ],
+    "TSTYPE_TYPES": [
+      "TSAnyKeyword",
+      "TSUnknownKeyword",
+      "TSNumberKeyword",
+      "TSObjectKeyword",
+      "TSBooleanKeyword",
+      "TSStringKeyword",
+      "TSSymbolKeyword",
+      "TSVoidKeyword",
+      "TSUndefinedKeyword",
+      "TSNullKeyword",
+      "TSNeverKeyword",
+      "TSThisType",
+      "TSFunctionType",
+      "TSConstructorType",
+      "TSTypeReference",
+      "TSTypePredicate",
+      "TSTypeQuery",
+      "TSTypeLiteral",
+      "TSArrayType",
+      "TSTupleType",
+      "TSOptionalType",
+      "TSRestType",
+      "TSUnionType",
+      "TSIntersectionType",
+      "TSConditionalType",
+      "TSInferType",
+      "TSParenthesizedType",
+      "TSTypeOperator",
+      "TSIndexedAccessType",
+      "TSMappedType",
+      "TSLiteralType",
+      "TSExpressionWithTypeArguments",
+      "TSImportType"
+    ],
+    "STATEMENT_OR_BLOCK_KEYS": [
+      "consequent",
+      "body",
+      "alternate"
+    ],
+    "FLATTENABLE_KEYS": [
+      "body",
+      "expressions"
+    ],
+    "FOR_INIT_KEYS": [
+      "left",
+      "init"
+    ],
+    "COMMENT_KEYS": [
+      "leadingComments",
+      "trailingComments",
+      "innerComments"
+    ],
+    "LOGICAL_OPERATORS": [
+      "||",
+      "&&",
+      "??"
+    ],
+    "UPDATE_OPERATORS": [
+      "++",
+      "--"
+    ],
+    "BOOLEAN_NUMBER_BINARY_OPERATORS": [
+      ">",
+      "<",
+      ">=",
+      "<="
+    ],
+    "EQUALITY_BINARY_OPERATORS": [
+      "==",
+      "===",
+      "!=",
+      "!=="
+    ],
+    "COMPARISON_BINARY_OPERATORS": [
+      "==",
+      "===",
+      "!=",
+      "!==",
+      "in",
+      "instanceof"
+    ],
+    "BOOLEAN_BINARY_OPERATORS": [
+      "==",
+      "===",
+      "!=",
+      "!==",
+      "in",
+      "instanceof",
+      ">",
+      "<",
+      ">=",
+      "<="
+    ],
+    "NUMBER_BINARY_OPERATORS": [
+      "-",
+      "/",
+      "%",
+      "*",
+      "**",
+      "&",
+      "|",
+      ">>",
+      ">>>",
+      "<<",
+      "^"
+    ],
+    "BINARY_OPERATORS": [
+      "+",
+      "-",
+      "/",
+      "%",
+      "*",
+      "**",
+      "&",
+      "|",
+      ">>",
+      ">>>",
+      "<<",
+      "^",
+      "==",
+      "===",
+      "!=",
+      "!==",
+      "in",
+      "instanceof",
+      ">",
+      "<",
+      ">=",
+      "<="
+    ],
+    "BOOLEAN_UNARY_OPERATORS": [
+      "delete",
+      "!"
+    ],
+    "NUMBER_UNARY_OPERATORS": [
+      "+",
+      "-",
+      "~"
+    ],
+    "STRING_UNARY_OPERATORS": [
+      "typeof"
+    ],
+    "UNARY_OPERATORS": [
+      "void",
+      "throw",
+      "delete",
+      "!",
+      "+",
+      "-",
+      "~",
+      "typeof"
+    ],
+    "INHERIT_KEYS": {
+      "optional": [
+        "typeAnnotation",
+        "typeParameters",
+        "returnType"
+      ],
+      "force": [
+        "start",
+        "loc",
+        "end"
+      ]
+    },
+    "VISITOR_KEYS": {
+      "ArrayExpression": [
+        "elements"
+      ],
+      "AssignmentExpression": [
+        "left",
+        "right"
+      ],
+      "BinaryExpression": [
+        "left",
+        "right"
+      ],
+      "InterpreterDirective": [],
+      "Directive": [
+        "value"
+      ],
+      "DirectiveLiteral": [],
+      "BlockStatement": [
+        "directives",
+        "body"
+      ],
+      "BreakStatement": [
+        "label"
+      ],
+      "CallExpression": [
+        "callee",
+        "arguments",
+        "typeParameters",
+        "typeArguments"
+      ],
+      "CatchClause": [
+        "param",
+        "body"
+      ],
+      "ConditionalExpression": [
+        "test",
+        "consequent",
+        "alternate"
+      ],
+      "ContinueStatement": [
+        "label"
+      ],
+      "DebuggerStatement": [],
+      "DoWhileStatement": [
+        "test",
+        "body"
+      ],
+      "EmptyStatement": [],
+      "ExpressionStatement": [
+        "expression"
+      ],
+      "File": [
+        "program"
+      ],
+      "ForInStatement": [
+        "left",
+        "right",
+        "body"
+      ],
+      "ForStatement": [
+        "init",
+        "test",
+        "update",
+        "body"
+      ],
+      "FunctionDeclaration": [
+        "id",
+        "params",
+        "body",
+        "returnType",
+        "typeParameters"
+      ],
+      "FunctionExpression": [
+        "id",
+        "params",
+        "body",
+        "returnType",
+        "typeParameters"
+      ],
+      "Identifier": [
+        "typeAnnotation",
+        "decorators"
+      ],
+      "IfStatement": [
+        "test",
+        "consequent",
+        "alternate"
+      ],
+      "LabeledStatement": [
+        "label",
+        "body"
+      ],
+      "StringLiteral": [],
+      "NumericLiteral": [],
+      "NullLiteral": [],
+      "BooleanLiteral": [],
+      "RegExpLiteral": [],
+      "LogicalExpression": [
+        "left",
+        "right"
+      ],
+      "MemberExpression": [
+        "object",
+        "property"
+      ],
+      "NewExpression": [
+        "callee",
+        "arguments",
+        "typeParameters",
+        "typeArguments"
+      ],
+      "Program": [
+        "directives",
+        "body"
+      ],
+      "ObjectExpression": [
+        "properties"
+      ],
+      "ObjectMethod": [
+        "key",
+        "params",
+        "body",
+        "decorators",
+        "returnType",
+        "typeParameters"
+      ],
+      "ObjectProperty": [
+        "key",
+        "value",
+        "decorators"
+      ],
+      "RestElement": [
+        "argument",
+        "typeAnnotation"
+      ],
+      "ReturnStatement": [
+        "argument"
+      ],
+      "SequenceExpression": [
+        "expressions"
+      ],
+      "ParenthesizedExpression": [
+        "expression"
+      ],
+      "SwitchCase": [
+        "test",
+        "consequent"
+      ],
+      "SwitchStatement": [
+        "discriminant",
+        "cases"
+      ],
+      "ThisExpression": [],
+      "ThrowStatement": [
+        "argument"
+      ],
+      "TryStatement": [
+        "block",
+        "handler",
+        "finalizer"
+      ],
+      "UnaryExpression": [
+        "argument"
+      ],
+      "UpdateExpression": [
+        "argument"
+      ],
+      "VariableDeclaration": [
+        "declarations"
+      ],
+      "VariableDeclarator": [
+        "id",
+        "init"
+      ],
+      "WhileStatement": [
+        "test",
+        "body"
+      ],
+      "WithStatement": [
+        "object",
+        "body"
+      ],
+      "AssignmentPattern": [
+        "left",
+        "right",
+        "decorators"
+      ],
+      "ArrayPattern": [
+        "elements",
+        "typeAnnotation"
+      ],
+      "ArrowFunctionExpression": [
+        "params",
+        "body",
+        "returnType",
+        "typeParameters"
+      ],
+      "ClassBody": [
+        "body"
+      ],
+      "ClassDeclaration": [
+        "id",
+        "body",
+        "superClass",
+        "mixins",
+        "typeParameters",
+        "superTypeParameters",
+        "implements",
+        "decorators"
+      ],
+      "ClassExpression": [
+        "id",
+        "body",
+        "superClass",
+        "mixins",
+        "typeParameters",
+        "superTypeParameters",
+        "implements",
+        "decorators"
+      ],
+      "ExportAllDeclaration": [
+        "source"
+      ],
+      "ExportDefaultDeclaration": [
+        "declaration"
+      ],
+      "ExportNamedDeclaration": [
+        "declaration",
+        "specifiers",
+        "source"
+      ],
+      "ExportSpecifier": [
+        "local",
+        "exported"
+      ],
+      "ForOfStatement": [
+        "left",
+        "right",
+        "body"
+      ],
+      "ImportDeclaration": [
+        "specifiers",
+        "source"
+      ],
+      "ImportDefaultSpecifier": [
+        "local"
+      ],
+      "ImportNamespaceSpecifier": [
+        "local"
+      ],
+      "ImportSpecifier": [
+        "local",
+        "imported"
+      ],
+      "MetaProperty": [
+        "meta",
+        "property"
+      ],
+      "ClassMethod": [
+        "key",
+        "params",
+        "body",
+        "decorators",
+        "returnType",
+        "typeParameters"
+      ],
+      "ObjectPattern": [
+        "properties",
+        "typeAnnotation",
+        "decorators"
+      ],
+      "SpreadElement": [
+        "argument"
+      ],
+      "Super": [],
+      "TaggedTemplateExpression": [
+        "tag",
+        "quasi"
+      ],
+      "TemplateElement": [],
+      "TemplateLiteral": [
+        "quasis",
+        "expressions"
+      ],
+      "YieldExpression": [
+        "argument"
+      ],
+      "AnyTypeAnnotation": [],
+      "ArrayTypeAnnotation": [
+        "elementType"
+      ],
+      "BooleanTypeAnnotation": [],
+      "BooleanLiteralTypeAnnotation": [],
+      "NullLiteralTypeAnnotation": [],
+      "ClassImplements": [
+        "id",
+        "typeParameters"
+      ],
+      "DeclareClass": [
+        "id",
+        "typeParameters",
+        "extends",
+        "mixins",
+        "implements",
+        "body"
+      ],
+      "DeclareFunction": [
+        "id"
+      ],
+      "DeclareInterface": [
+        "id",
+        "typeParameters",
+        "extends",
+        "mixins",
+        "implements",
+        "body"
+      ],
+      "DeclareModule": [
+        "id",
+        "body"
+      ],
+      "DeclareModuleExports": [
+        "typeAnnotation"
+      ],
+      "DeclareTypeAlias": [
+        "id",
+        "typeParameters",
+        "right"
+      ],
+      "DeclareOpaqueType": [
+        "id",
+        "typeParameters",
+        "supertype"
+      ],
+      "DeclareVariable": [
+        "id"
+      ],
+      "DeclareExportDeclaration": [
+        "declaration",
+        "specifiers",
+        "source"
+      ],
+      "DeclareExportAllDeclaration": [
+        "source"
+      ],
+      "DeclaredPredicate": [
+        "value"
+      ],
+      "ExistsTypeAnnotation": [],
+      "FunctionTypeAnnotation": [
+        "typeParameters",
+        "params",
+        "rest",
+        "returnType"
+      ],
+      "FunctionTypeParam": [
+        "name",
+        "typeAnnotation"
+      ],
+      "GenericTypeAnnotation": [
+        "id",
+        "typeParameters"
+      ],
+      "InferredPredicate": [],
+      "InterfaceExtends": [
+        "id",
+        "typeParameters"
+      ],
+      "InterfaceDeclaration": [
+        "id",
+        "typeParameters",
+        "extends",
+        "mixins",
+        "implements",
+        "body"
+      ],
+      "InterfaceTypeAnnotation": [
+        "extends",
+        "body"
+      ],
+      "IntersectionTypeAnnotation": [
+        "types"
+      ],
+      "MixedTypeAnnotation": [],
+      "EmptyTypeAnnotation": [],
+      "NullableTypeAnnotation": [
+        "typeAnnotation"
+      ],
+      "NumberLiteralTypeAnnotation": [],
+      "NumberTypeAnnotation": [],
+      "ObjectTypeAnnotation": [
+        "properties",
+        "indexers",
+        "callProperties",
+        "internalSlots"
+      ],
+      "ObjectTypeInternalSlot": [
+        "id",
+        "value",
+        "optional",
+        "static",
+        "method"
+      ],
+      "ObjectTypeCallProperty": [
+        "value"
+      ],
+      "ObjectTypeIndexer": [
+        "id",
+        "key",
+        "value",
+        "variance"
+      ],
+      "ObjectTypeProperty": [
+        "key",
+        "value",
+        "variance"
+      ],
+      "ObjectTypeSpreadProperty": [
+        "argument"
+      ],
+      "OpaqueType": [
+        "id",
+        "typeParameters",
+        "supertype",
+        "impltype"
+      ],
+      "QualifiedTypeIdentifier": [
+        "id",
+        "qualification"
+      ],
+      "StringLiteralTypeAnnotation": [],
+      "StringTypeAnnotation": [],
+      "ThisTypeAnnotation": [],
+      "TupleTypeAnnotation": [
+        "types"
+      ],
+      "TypeofTypeAnnotation": [
+        "argument"
+      ],
+      "TypeAlias": [
+        "id",
+        "typeParameters",
+        "right"
+      ],
+      "TypeAnnotation": [
+        "typeAnnotation"
+      ],
+      "TypeCastExpression": [
+        "expression",
+        "typeAnnotation"
+      ],
+      "TypeParameter": [
+        "bound",
+        "default",
+        "variance"
+      ],
+      "TypeParameterDeclaration": [
+        "params"
+      ],
+      "TypeParameterInstantiation": [
+        "params"
+      ],
+      "UnionTypeAnnotation": [
+        "types"
+      ],
+      "Variance": [],
+      "VoidTypeAnnotation": [],
+      "JSXAttribute": [
+        "name",
+        "value"
+      ],
+      "JSXClosingElement": [
+        "name"
+      ],
+      "JSXElement": [
+        "openingElement",
+        "children",
+        "closingElement"
+      ],
+      "JSXEmptyExpression": [],
+      "JSXExpressionContainer": [
+        "expression"
+      ],
+      "JSXSpreadChild": [
+        "expression"
+      ],
+      "JSXIdentifier": [],
+      "JSXMemberExpression": [
+        "object",
+        "property"
+      ],
+      "JSXNamespacedName": [
+        "namespace",
+        "name"
+      ],
+      "JSXOpeningElement": [
+        "name",
+        "attributes"
+      ],
+      "JSXSpreadAttribute": [
+        "argument"
+      ],
+      "JSXText": [],
+      "JSXFragment": [
+        "openingFragment",
+        "children",
+        "closingFragment"
+      ],
+      "JSXOpeningFragment": [],
+      "JSXClosingFragment": [],
+      "Noop": [],
+      "Placeholder": [],
+      "ArgumentPlaceholder": [],
+      "AwaitExpression": [
+        "argument"
+      ],
+      "BindExpression": [
+        "object",
+        "callee"
+      ],
+      "ClassProperty": [
+        "key",
+        "value",
+        "typeAnnotation",
+        "decorators"
+      ],
+      "OptionalMemberExpression": [
+        "object",
+        "property"
+      ],
+      "PipelineTopicExpression": [
+        "expression"
+      ],
+      "PipelineBareFunction": [
+        "callee"
+      ],
+      "PipelinePrimaryTopicReference": [],
+      "OptionalCallExpression": [
+        "callee",
+        "arguments",
+        "typeParameters",
+        "typeArguments"
+      ],
+      "ClassPrivateProperty": [
+        "key",
+        "value"
+      ],
+      "ClassPrivateMethod": [
+        "key",
+        "params",
+        "body",
+        "decorators",
+        "returnType",
+        "typeParameters"
+      ],
+      "Import": [],
+      "Decorator": [
+        "expression"
+      ],
+      "DoExpression": [
+        "body"
+      ],
+      "ExportDefaultSpecifier": [
+        "exported"
+      ],
+      "ExportNamespaceSpecifier": [
+        "exported"
+      ],
+      "PrivateName": [
+        "id"
+      ],
+      "BigIntLiteral": [],
+      "TSParameterProperty": [
+        "parameter"
+      ],
+      "TSDeclareFunction": [
+        "id",
+        "typeParameters",
+        "params",
+        "returnType"
+      ],
+      "TSDeclareMethod": [
+        "decorators",
+        "key",
+        "typeParameters",
+        "params",
+        "returnType"
+      ],
+      "TSQualifiedName": [
+        "left",
+        "right"
+      ],
+      "TSCallSignatureDeclaration": [
+        "typeParameters",
+        "parameters",
+        "typeAnnotation"
+      ],
+      "TSConstructSignatureDeclaration": [
+        "typeParameters",
+        "parameters",
+        "typeAnnotation"
+      ],
+      "TSPropertySignature": [
+        "key",
+        "typeAnnotation",
+        "initializer"
+      ],
+      "TSMethodSignature": [
+        "key",
+        "typeParameters",
+        "parameters",
+        "typeAnnotation"
+      ],
+      "TSIndexSignature": [
+        "parameters",
+        "typeAnnotation"
+      ],
+      "TSAnyKeyword": [],
+      "TSUnknownKeyword": [],
+      "TSNumberKeyword": [],
+      "TSObjectKeyword": [],
+      "TSBooleanKeyword": [],
+      "TSStringKeyword": [],
+      "TSSymbolKeyword": [],
+      "TSVoidKeyword": [],
+      "TSUndefinedKeyword": [],
+      "TSNullKeyword": [],
+      "TSNeverKeyword": [],
+      "TSThisType": [],
+      "TSFunctionType": [
+        "typeParameters",
+        "parameters",
+        "typeAnnotation"
+      ],
+      "TSConstructorType": [
+        "typeParameters",
+        "parameters",
+        "typeAnnotation"
+      ],
+      "TSTypeReference": [
+        "typeName",
+        "typeParameters"
+      ],
+      "TSTypePredicate": [
+        "parameterName",
+        "typeAnnotation"
+      ],
+      "TSTypeQuery": [
+        "exprName"
+      ],
+      "TSTypeLiteral": [
+        "members"
+      ],
+      "TSArrayType": [
+        "elementType"
+      ],
+      "TSTupleType": [
+        "elementTypes"
+      ],
+      "TSOptionalType": [
+        "typeAnnotation"
+      ],
+      "TSRestType": [
+        "typeAnnotation"
+      ],
+      "TSUnionType": [
+        "types"
+      ],
+      "TSIntersectionType": [
+        "types"
+      ],
+      "TSConditionalType": [
+        "checkType",
+        "extendsType",
+        "trueType",
+        "falseType"
+      ],
+      "TSInferType": [
+        "typeParameter"
+      ],
+      "TSParenthesizedType": [
+        "typeAnnotation"
+      ],
+      "TSTypeOperator": [
+        "typeAnnotation"
+      ],
+      "TSIndexedAccessType": [
+        "objectType",
+        "indexType"
+      ],
+      "TSMappedType": [
+        "typeParameter",
+        "typeAnnotation"
+      ],
+      "TSLiteralType": [
+        "literal"
+      ],
+      "TSExpressionWithTypeArguments": [
+        "expression",
+        "typeParameters"
+      ],
+      "TSInterfaceDeclaration": [
+        "id",
+        "typeParameters",
+        "extends",
+        "body"
+      ],
+      "TSInterfaceBody": [
+        "body"
+      ],
+      "TSTypeAliasDeclaration": [
+        "id",
+        "typeParameters",
+        "typeAnnotation"
+      ],
+      "TSAsExpression": [
+        "expression",
+        "typeAnnotation"
+      ],
+      "TSTypeAssertion": [
+        "typeAnnotation",
+        "expression"
+      ],
+      "TSEnumDeclaration": [
+        "id",
+        "members"
+      ],
+      "TSEnumMember": [
+        "id",
+        "initializer"
+      ],
+      "TSModuleDeclaration": [
+        "id",
+        "body"
+      ],
+      "TSModuleBlock": [
+        "body"
+      ],
+      "TSImportType": [
+        "argument",
+        "qualifier",
+        "typeParameters"
+      ],
+      "TSImportEqualsDeclaration": [
+        "id",
+        "moduleReference"
+      ],
+      "TSExternalModuleReference": [
+        "expression"
+      ],
+      "TSNonNullExpression": [
+        "expression"
+      ],
+      "TSExportAssignment": [
+        "expression"
+      ],
+      "TSNamespaceExportDeclaration": [
+        "id"
+      ],
+      "TSTypeAnnotation": [
+        "typeAnnotation"
+      ],
+      "TSTypeParameterInstantiation": [
+        "params"
+      ],
+      "TSTypeParameterDeclaration": [
+        "params"
+      ],
+      "TSTypeParameter": [
+        "constraint",
+        "default"
+      ]
+    },
+    "ALIAS_KEYS": {
+      "ArrayExpression": [
+        "Expression"
+      ],
+      "AssignmentExpression": [
+        "Expression"
+      ],
+      "BinaryExpression": [
+        "Binary",
+        "Expression"
+      ],
+      "InterpreterDirective": [],
+      "Directive": [],
+      "DirectiveLiteral": [],
+      "BlockStatement": [
+        "Scopable",
+        "BlockParent",
+        "Block",
+        "Statement"
+      ],
+      "BreakStatement": [
+        "Statement",
+        "Terminatorless",
+        "CompletionStatement"
+      ],
+      "CallExpression": [
+        "Expression"
+      ],
+      "CatchClause": [
+        "Scopable",
+        "BlockParent"
+      ],
+      "ConditionalExpression": [
+        "Expression",
+        "Conditional"
+      ],
+      "ContinueStatement": [
+        "Statement",
+        "Terminatorless",
+        "CompletionStatement"
+      ],
+      "DebuggerStatement": [
+        "Statement"
+      ],
+      "DoWhileStatement": [
+        "Statement",
+        "BlockParent",
+        "Loop",
+        "While",
+        "Scopable"
+      ],
+      "EmptyStatement": [
+        "Statement"
+      ],
+      "ExpressionStatement": [
+        "Statement",
+        "ExpressionWrapper"
+      ],
+      "File": [],
+      "ForInStatement": [
+        "Scopable",
+        "Statement",
+        "For",
+        "BlockParent",
+        "Loop",
+        "ForXStatement"
+      ],
+      "ForStatement": [
+        "Scopable",
+        "Statement",
+        "For",
+        "BlockParent",
+        "Loop"
+      ],
+      "FunctionDeclaration": [
+        "Scopable",
+        "Function",
+        "BlockParent",
+        "FunctionParent",
+        "Statement",
+        "Pureish",
+        "Declaration"
+      ],
+      "FunctionExpression": [
+        "Scopable",
+        "Function",
+        "BlockParent",
+        "FunctionParent",
+        "Expression",
+        "Pureish"
+      ],
+      "Identifier": [
+        "Expression",
+        "PatternLike",
+        "LVal",
+        "TSEntityName"
+      ],
+      "IfStatement": [
+        "Statement",
+        "Conditional"
+      ],
+      "LabeledStatement": [
+        "Statement"
+      ],
+      "StringLiteral": [
+        "Expression",
+        "Pureish",
+        "Literal",
+        "Immutable"
+      ],
+      "NumericLiteral": [
+        "Expression",
+        "Pureish",
+        "Literal",
+        "Immutable"
+      ],
+      "NullLiteral": [
+        "Expression",
+        "Pureish",
+        "Literal",
+        "Immutable"
+      ],
+      "BooleanLiteral": [
+        "Expression",
+        "Pureish",
+        "Literal",
+        "Immutable"
+      ],
+      "RegExpLiteral": [
+        "Expression",
+        "Literal"
+      ],
+      "LogicalExpression": [
+        "Binary",
+        "Expression"
+      ],
+      "MemberExpression": [
+        "Expression",
+        "LVal"
+      ],
+      "NewExpression": [
+        "Expression"
+      ],
+      "Program": [
+        "Scopable",
+        "BlockParent",
+        "Block"
+      ],
+      "ObjectExpression": [
+        "Expression"
+      ],
+      "ObjectMethod": [
+        "UserWhitespacable",
+        "Function",
+        "Scopable",
+        "BlockParent",
+        "FunctionParent",
+        "Method",
+        "ObjectMember"
+      ],
+      "ObjectProperty": [
+        "UserWhitespacable",
+        "Property",
+        "ObjectMember"
+      ],
+      "RestElement": [
+        "LVal",
+        "PatternLike"
+      ],
+      "ReturnStatement": [
+        "Statement",
+        "Terminatorless",
+        "CompletionStatement"
+      ],
+      "SequenceExpression": [
+        "Expression"
+      ],
+      "ParenthesizedExpression": [
+        "Expression",
+        "ExpressionWrapper"
+      ],
+      "SwitchCase": [],
+      "SwitchStatement": [
+        "Statement",
+        "BlockParent",
+        "Scopable"
+      ],
+      "ThisExpression": [
+        "Expression"
+      ],
+      "ThrowStatement": [
+        "Statement",
+        "Terminatorless",
+        "CompletionStatement"
+      ],
+      "TryStatement": [
+        "Statement"
+      ],
+      "UnaryExpression": [
+        "UnaryLike",
+        "Expression"
+      ],
+      "UpdateExpression": [
+        "Expression"
+      ],
+      "VariableDeclaration": [
+        "Statement",
+        "Declaration"
+      ],
+      "VariableDeclarator": [],
+      "WhileStatement": [
+        "Statement",
+        "BlockParent",
+        "Loop",
+        "While",
+        "Scopable"
+      ],
+      "WithStatement": [
+        "Statement"
+      ],
+      "AssignmentPattern": [
+        "Pattern",
+        "PatternLike",
+        "LVal"
+      ],
+      "ArrayPattern": [
+        "Pattern",
+        "PatternLike",
+        "LVal"
+      ],
+      "ArrowFunctionExpression": [
+        "Scopable",
+        "Function",
+        "BlockParent",
+        "FunctionParent",
+        "Expression",
+        "Pureish"
+      ],
+      "ClassBody": [],
+      "ClassDeclaration": [
+        "Scopable",
+        "Class",
+        "Statement",
+        "Declaration",
+        "Pureish"
+      ],
+      "ClassExpression": [
+        "Scopable",
+        "Class",
+        "Expression",
+        "Pureish"
+      ],
+      "ExportAllDeclaration": [
+        "Statement",
+        "Declaration",
+        "ModuleDeclaration",
+        "ExportDeclaration"
+      ],
+      "ExportDefaultDeclaration": [
+        "Statement",
+        "Declaration",
+        "ModuleDeclaration",
+        "ExportDeclaration"
+      ],
+      "ExportNamedDeclaration": [
+        "Statement",
+        "Declaration",
+        "ModuleDeclaration",
+        "ExportDeclaration"
+      ],
+      "ExportSpecifier": [
+        "ModuleSpecifier"
+      ],
+      "ForOfStatement": [
+        "Scopable",
+        "Statement",
+        "For",
+        "BlockParent",
+        "Loop",
+        "ForXStatement"
+      ],
+      "ImportDeclaration": [
+        "Statement",
+        "Declaration",
+        "ModuleDeclaration"
+      ],
+      "ImportDefaultSpecifier": [
+        "ModuleSpecifier"
+      ],
+      "ImportNamespaceSpecifier": [
+        "ModuleSpecifier"
+      ],
+      "ImportSpecifier": [
+        "ModuleSpecifier"
+      ],
+      "MetaProperty": [
+        "Expression"
+      ],
+      "ClassMethod": [
+        "Function",
+        "Scopable",
+        "BlockParent",
+        "FunctionParent",
+        "Method"
+      ],
+      "ObjectPattern": [
+        "Pattern",
+        "PatternLike",
+        "LVal"
+      ],
+      "SpreadElement": [
+        "UnaryLike"
+      ],
+      "Super": [
+        "Expression"
+      ],
+      "TaggedTemplateExpression": [
+        "Expression"
+      ],
+      "TemplateElement": [],
+      "TemplateLiteral": [
+        "Expression",
+        "Literal"
+      ],
+      "YieldExpression": [
+        "Expression",
+        "Terminatorless"
+      ],
+      "AnyTypeAnnotation": [
+        "Flow",
+        "FlowType",
+        "FlowBaseAnnotation"
+      ],
+      "ArrayTypeAnnotation": [
+        "Flow",
+        "FlowType"
+      ],
+      "BooleanTypeAnnotation": [
+        "Flow",
+        "FlowType",
+        "FlowBaseAnnotation"
+      ],
+      "BooleanLiteralTypeAnnotation": [
+        "Flow",
+        "FlowType"
+      ],
+      "NullLiteralTypeAnnotation": [
+        "Flow",
+        "FlowType",
+        "FlowBaseAnnotation"
+      ],
+      "ClassImplements": [
+        "Flow"
+      ],
+      "DeclareClass": [
+        "Flow",
+        "FlowDeclaration",
+        "Statement",
+        "Declaration"
+      ],
+      "DeclareFunction": [
+        "Flow",
+        "FlowDeclaration",
+        "Statement",
+        "Declaration"
+      ],
+      "DeclareInterface": [
+        "Flow",
+        "FlowDeclaration",
+        "Statement",
+        "Declaration"
+      ],
+      "DeclareModule": [
+        "Flow",
+        "FlowDeclaration",
+        "Statement",
+        "Declaration"
+      ],
+      "DeclareModuleExports": [
+        "Flow",
+        "FlowDeclaration",
+        "Statement",
+        "Declaration"
+      ],
+      "DeclareTypeAlias": [
+        "Flow",
+        "FlowDeclaration",
+        "Statement",
+        "Declaration"
+      ],
+      "DeclareOpaqueType": [
+        "Flow",
+        "FlowDeclaration",
+        "Statement",
+        "Declaration"
+      ],
+      "DeclareVariable": [
+        "Flow",
+        "FlowDeclaration",
+        "Statement",
+        "Declaration"
+      ],
+      "DeclareExportDeclaration": [
+        "Flow",
+        "FlowDeclaration",
+        "Statement",
+        "Declaration"
+      ],
+      "DeclareExportAllDeclaration": [
+        "Flow",
+        "FlowDeclaration",
+        "Statement",
+        "Declaration"
+      ],
+      "DeclaredPredicate": [
+        "Flow",
+        "FlowPredicate"
+      ],
+      "ExistsTypeAnnotation": [
+        "Flow",
+        "FlowType"
+      ],
+      "FunctionTypeAnnotation": [
+        "Flow",
+        "FlowType"
+      ],
+      "FunctionTypeParam": [
+        "Flow"
+      ],
+      "GenericTypeAnnotation": [
+        "Flow",
+        "FlowType"
+      ],
+      "InferredPredicate": [
+        "Flow",
+        "FlowPredicate"
+      ],
+      "InterfaceExtends": [
+        "Flow"
+      ],
+      "InterfaceDeclaration": [
+        "Flow",
+        "FlowDeclaration",
+        "Statement",
+        "Declaration"
+      ],
+      "InterfaceTypeAnnotation": [
+        "Flow",
+        "FlowType"
+      ],
+      "IntersectionTypeAnnotation": [
+        "Flow",
+        "FlowType"
+      ],
+      "MixedTypeAnnotation": [
+        "Flow",
+        "FlowType",
+        "FlowBaseAnnotation"
+      ],
+      "EmptyTypeAnnotation": [
+        "Flow",
+        "FlowType",
+        "FlowBaseAnnotation"
+      ],
+      "NullableTypeAnnotation": [
+        "Flow",
+        "FlowType"
+      ],
+      "NumberLiteralTypeAnnotation": [
+        "Flow",
+        "FlowType"
+      ],
+      "NumberTypeAnnotation": [
+        "Flow",
+        "FlowType",
+        "FlowBaseAnnotation"
+      ],
+      "ObjectTypeAnnotation": [
+        "Flow",
+        "FlowType"
+      ],
+      "ObjectTypeInternalSlot": [
+        "Flow",
+        "UserWhitespacable"
+      ],
+      "ObjectTypeCallProperty": [
+        "Flow",
+        "UserWhitespacable"
+      ],
+      "ObjectTypeIndexer": [
+        "Flow",
+        "UserWhitespacable"
+      ],
+      "ObjectTypeProperty": [
+        "Flow",
+        "UserWhitespacable"
+      ],
+      "ObjectTypeSpreadProperty": [
+        "Flow",
+        "UserWhitespacable"
+      ],
+      "OpaqueType": [
+        "Flow",
+        "FlowDeclaration",
+        "Statement",
+        "Declaration"
+      ],
+      "QualifiedTypeIdentifier": [
+        "Flow"
+      ],
+      "StringLiteralTypeAnnotation": [
+        "Flow",
+        "FlowType"
+      ],
+      "StringTypeAnnotation": [
+        "Flow",
+        "FlowType",
+        "FlowBaseAnnotation"
+      ],
+      "ThisTypeAnnotation": [
+        "Flow",
+        "FlowType",
+        "FlowBaseAnnotation"
+      ],
+      "TupleTypeAnnotation": [
+        "Flow",
+        "FlowType"
+      ],
+      "TypeofTypeAnnotation": [
+        "Flow",
+        "FlowType"
+      ],
+      "TypeAlias": [
+        "Flow",
+        "FlowDeclaration",
+        "Statement",
+        "Declaration"
+      ],
+      "TypeAnnotation": [
+        "Flow"
+      ],
+      "TypeCastExpression": [
+        "Flow",
+        "ExpressionWrapper",
+        "Expression"
+      ],
+      "TypeParameter": [
+        "Flow"
+      ],
+      "TypeParameterDeclaration": [
+        "Flow"
+      ],
+      "TypeParameterInstantiation": [
+        "Flow"
+      ],
+      "UnionTypeAnnotation": [
+        "Flow",
+        "FlowType"
+      ],
+      "Variance": [
+        "Flow"
+      ],
+      "VoidTypeAnnotation": [
+        "Flow",
+        "FlowType",
+        "FlowBaseAnnotation"
+      ],
+      "JSXAttribute": [
+        "JSX",
+        "Immutable"
+      ],
+      "JSXClosingElement": [
+        "JSX",
+        "Immutable"
+      ],
+      "JSXElement": [
+        "JSX",
+        "Immutable",
+        "Expression"
+      ],
+      "JSXEmptyExpression": [
+        "JSX"
+      ],
+      "JSXExpressionContainer": [
+        "JSX",
+        "Immutable"
+      ],
+      "JSXSpreadChild": [
+        "JSX",
+        "Immutable"
+      ],
+      "JSXIdentifier": [
+        "JSX"
+      ],
+      "JSXMemberExpression": [
+        "JSX"
+      ],
+      "JSXNamespacedName": [
+        "JSX"
+      ],
+      "JSXOpeningElement": [
+        "JSX",
+        "Immutable"
+      ],
+      "JSXSpreadAttribute": [
+        "JSX"
+      ],
+      "JSXText": [
+        "JSX",
+        "Immutable"
+      ],
+      "JSXFragment": [
+        "JSX",
+        "Immutable",
+        "Expression"
+      ],
+      "JSXOpeningFragment": [
+        "JSX",
+        "Immutable"
+      ],
+      "JSXClosingFragment": [
+        "JSX",
+        "Immutable"
+      ],
+      "Noop": [],
+      "Placeholder": [],
+      "ArgumentPlaceholder": [],
+      "AwaitExpression": [
+        "Expression",
+        "Terminatorless"
+      ],
+      "BindExpression": [
+        "Expression"
+      ],
+      "ClassProperty": [
+        "Property"
+      ],
+      "OptionalMemberExpression": [
+        "Expression"
+      ],
+      "PipelineTopicExpression": [],
+      "PipelineBareFunction": [],
+      "PipelinePrimaryTopicReference": [
+        "Expression"
+      ],
+      "OptionalCallExpression": [
+        "Expression"
+      ],
+      "ClassPrivateProperty": [
+        "Property",
+        "Private"
+      ],
+      "ClassPrivateMethod": [
+        "Function",
+        "Scopable",
+        "BlockParent",
+        "FunctionParent",
+        "Method",
+        "Private"
+      ],
+      "Import": [
+        "Expression"
+      ],
+      "Decorator": [],
+      "DoExpression": [
+        "Expression"
+      ],
+      "ExportDefaultSpecifier": [
+        "ModuleSpecifier"
+      ],
+      "ExportNamespaceSpecifier": [
+        "ModuleSpecifier"
+      ],
+      "PrivateName": [
+        "Private"
+      ],
+      "BigIntLiteral": [
+        "Expression",
+        "Pureish",
+        "Literal",
+        "Immutable"
+      ],
+      "TSParameterProperty": [
+        "LVal"
+      ],
+      "TSDeclareFunction": [
+        "Statement",
+        "Declaration"
+      ],
+      "TSDeclareMethod": [],
+      "TSQualifiedName": [
+        "TSEntityName"
+      ],
+      "TSCallSignatureDeclaration": [
+        "TSTypeElement"
+      ],
+      "TSConstructSignatureDeclaration": [
+        "TSTypeElement"
+      ],
+      "TSPropertySignature": [
+        "TSTypeElement"
+      ],
+      "TSMethodSignature": [
+        "TSTypeElement"
+      ],
+      "TSIndexSignature": [
+        "TSTypeElement"
+      ],
+      "TSAnyKeyword": [
+        "TSType"
+      ],
+      "TSUnknownKeyword": [
+        "TSType"
+      ],
+      "TSNumberKeyword": [
+        "TSType"
+      ],
+      "TSObjectKeyword": [
+        "TSType"
+      ],
+      "TSBooleanKeyword": [
+        "TSType"
+      ],
+      "TSStringKeyword": [
+        "TSType"
+      ],
+      "TSSymbolKeyword": [
+        "TSType"
+      ],
+      "TSVoidKeyword": [
+        "TSType"
+      ],
+      "TSUndefinedKeyword": [
+        "TSType"
+      ],
+      "TSNullKeyword": [
+        "TSType"
+      ],
+      "TSNeverKeyword": [
+        "TSType"
+      ],
+      "TSThisType": [
+        "TSType"
+      ],
+      "TSFunctionType": [
+        "TSType"
+      ],
+      "TSConstructorType": [
+        "TSType"
+      ],
+      "TSTypeReference": [
+        "TSType"
+      ],
+      "TSTypePredicate": [
+        "TSType"
+      ],
+      "TSTypeQuery": [
+        "TSType"
+      ],
+      "TSTypeLiteral": [
+        "TSType"
+      ],
+      "TSArrayType": [
+        "TSType"
+      ],
+      "TSTupleType": [
+        "TSType"
+      ],
+      "TSOptionalType": [
+        "TSType"
+      ],
+      "TSRestType": [
+        "TSType"
+      ],
+      "TSUnionType": [
+        "TSType"
+      ],
+      "TSIntersectionType": [
+        "TSType"
+      ],
+      "TSConditionalType": [
+        "TSType"
+      ],
+      "TSInferType": [
+        "TSType"
+      ],
+      "TSParenthesizedType": [
+        "TSType"
+      ],
+      "TSTypeOperator": [
+        "TSType"
+      ],
+      "TSIndexedAccessType": [
+        "TSType"
+      ],
+      "TSMappedType": [
+        "TSType"
+      ],
+      "TSLiteralType": [
+        "TSType"
+      ],
+      "TSExpressionWithTypeArguments": [
+        "TSType"
+      ],
+      "TSInterfaceDeclaration": [
+        "Statement",
+        "Declaration"
+      ],
+      "TSInterfaceBody": [],
+      "TSTypeAliasDeclaration": [
+        "Statement",
+        "Declaration"
+      ],
+      "TSAsExpression": [
+        "Expression"
+      ],
+      "TSTypeAssertion": [
+        "Expression"
+      ],
+      "TSEnumDeclaration": [
+        "Statement",
+        "Declaration"
+      ],
+      "TSEnumMember": [],
+      "TSModuleDeclaration": [
+        "Statement",
+        "Declaration"
+      ],
+      "TSModuleBlock": [],
+      "TSImportType": [
+        "TSType"
+      ],
+      "TSImportEqualsDeclaration": [
+        "Statement"
+      ],
+      "TSExternalModuleReference": [],
+      "TSNonNullExpression": [
+        "Expression"
+      ],
+      "TSExportAssignment": [
+        "Statement"
+      ],
+      "TSNamespaceExportDeclaration": [
+        "Statement"
+      ],
+      "TSTypeAnnotation": [],
+      "TSTypeParameterInstantiation": [],
+      "TSTypeParameterDeclaration": [],
+      "TSTypeParameter": []
+    },
+    "FLIPPED_ALIAS_KEYS": {
+      "Expression": [
+        "ArrayExpression",
+        "AssignmentExpression",
+        "BinaryExpression",
+        "CallExpression",
+        "ConditionalExpression",
+        "FunctionExpression",
+        "Identifier",
+        "StringLiteral",
+        "NumericLiteral",
+        "NullLiteral",
+        "BooleanLiteral",
+        "RegExpLiteral",
+        "LogicalExpression",
+        "MemberExpression",
+        "NewExpression",
+        "ObjectExpression",
+        "SequenceExpression",
+        "ParenthesizedExpression",
+        "ThisExpression",
+        "UnaryExpression",
+        "UpdateExpression",
+        "ArrowFunctionExpression",
+        "ClassExpression",
+        "MetaProperty",
+        "Super",
+        "TaggedTemplateExpression",
+        "TemplateLiteral",
+        "YieldExpression",
+        "TypeCastExpression",
+        "JSXElement",
+        "JSXFragment",
+        "AwaitExpression",
+        "BindExpression",
+        "OptionalMemberExpression",
+        "PipelinePrimaryTopicReference",
+        "OptionalCallExpression",
+        "Import",
+        "DoExpression",
+        "BigIntLiteral",
+        "TSAsExpression",
+        "TSTypeAssertion",
+        "TSNonNullExpression"
+      ],
+      "Binary": [
+        "BinaryExpression",
+        "LogicalExpression"
+      ],
+      "Scopable": [
+        "BlockStatement",
+        "CatchClause",
+        "DoWhileStatement",
+        "ForInStatement",
+        "ForStatement",
+        "FunctionDeclaration",
+        "FunctionExpression",
+        "Program",
+        "ObjectMethod",
+        "SwitchStatement",
+        "WhileStatement",
+        "ArrowFunctionExpression",
+        "ClassDeclaration",
+        "ClassExpression",
+        "ForOfStatement",
+        "ClassMethod",
+        "ClassPrivateMethod"
+      ],
+      "BlockParent": [
+        "BlockStatement",
+        "CatchClause",
+        "DoWhileStatement",
+        "ForInStatement",
+        "ForStatement",
+        "FunctionDeclaration",
+        "FunctionExpression",
+        "Program",
+        "ObjectMethod",
+        "SwitchStatement",
+        "WhileStatement",
+        "ArrowFunctionExpression",
+        "ForOfStatement",
+        "ClassMethod",
+        "ClassPrivateMethod"
+      ],
+      "Block": [
+        "BlockStatement",
+        "Program"
+      ],
+      "Statement": [
+        "BlockStatement",
+        "BreakStatement",
+        "ContinueStatement",
+        "DebuggerStatement",
+        "DoWhileStatement",
+        "EmptyStatement",
+        "ExpressionStatement",
+        "ForInStatement",
+        "ForStatement",
+        "FunctionDeclaration",
+        "IfStatement",
+        "LabeledStatement",
+        "ReturnStatement",
+        "SwitchStatement",
+        "ThrowStatement",
+        "TryStatement",
+        "VariableDeclaration",
+        "WhileStatement",
+        "WithStatement",
+        "ClassDeclaration",
+        "ExportAllDeclaration",
+        "ExportDefaultDeclaration",
+        "ExportNamedDeclaration",
+        "ForOfStatement",
+        "ImportDeclaration",
+        "DeclareClass",
+        "DeclareFunction",
+        "DeclareInterface",
+        "DeclareModule",
+        "DeclareModuleExports",
+        "DeclareTypeAlias",
+        "DeclareOpaqueType",
+        "DeclareVariable",
+        "DeclareExportDeclaration",
+        "DeclareExportAllDeclaration",
+        "InterfaceDeclaration",
+        "OpaqueType",
+        "TypeAlias",
+        "TSDeclareFunction",
+        "TSInterfaceDeclaration",
+        "TSTypeAliasDeclaration",
+        "TSEnumDeclaration",
+        "TSModuleDeclaration",
+        "TSImportEqualsDeclaration",
+        "TSExportAssignment",
+        "TSNamespaceExportDeclaration"
+      ],
+      "Terminatorless": [
+        "BreakStatement",
+        "ContinueStatement",
+        "ReturnStatement",
+        "ThrowStatement",
+        "YieldExpression",
+        "AwaitExpression"
+      ],
+      "CompletionStatement": [
+        "BreakStatement",
+        "ContinueStatement",
+        "ReturnStatement",
+        "ThrowStatement"
+      ],
+      "Conditional": [
+        "ConditionalExpression",
+        "IfStatement"
+      ],
+      "Loop": [
+        "DoWhileStatement",
+        "ForInStatement",
+        "ForStatement",
+        "WhileStatement",
+        "ForOfStatement"
+      ],
+      "While": [
+        "DoWhileStatement",
+        "WhileStatement"
+      ],
+      "ExpressionWrapper": [
+        "ExpressionStatement",
+        "ParenthesizedExpression",
+        "TypeCastExpression"
+      ],
+      "For": [
+        "ForInStatement",
+        "ForStatement",
+        "ForOfStatement"
+      ],
+      "ForXStatement": [
+        "ForInStatement",
+        "ForOfStatement"
+      ],
+      "Function": [
+        "FunctionDeclaration",
+        "FunctionExpression",
+        "ObjectMethod",
+        "ArrowFunctionExpression",
+        "ClassMethod",
+        "ClassPrivateMethod"
+      ],
+      "FunctionParent": [
+        "FunctionDeclaration",
+        "FunctionExpression",
+        "ObjectMethod",
+        "ArrowFunctionExpression",
+        "ClassMethod",
+        "ClassPrivateMethod"
+      ],
+      "Pureish": [
+        "FunctionDeclaration",
+        "FunctionExpression",
+        "StringLiteral",
+        "NumericLiteral",
+        "NullLiteral",
+        "BooleanLiteral",
+        "ArrowFunctionExpression",
+        "ClassDeclaration",
+        "ClassExpression",
+        "BigIntLiteral"
+      ],
+      "Declaration": [
+        "FunctionDeclaration",
+        "VariableDeclaration",
+        "ClassDeclaration",
+        "ExportAllDeclaration",
+        "ExportDefaultDeclaration",
+        "ExportNamedDeclaration",
+        "ImportDeclaration",
+        "DeclareClass",
+        "DeclareFunction",
+        "DeclareInterface",
+        "DeclareModule",
+        "DeclareModuleExports",
+        "DeclareTypeAlias",
+        "DeclareOpaqueType",
+        "DeclareVariable",
+        "DeclareExportDeclaration",
+        "DeclareExportAllDeclaration",
+        "InterfaceDeclaration",
+        "OpaqueType",
+        "TypeAlias",
+        "TSDeclareFunction",
+        "TSInterfaceDeclaration",
+        "TSTypeAliasDeclaration",
+        "TSEnumDeclaration",
+        "TSModuleDeclaration"
+      ],
+      "PatternLike": [
+        "Identifier",
+        "RestElement",
+        "AssignmentPattern",
+        "ArrayPattern",
+        "ObjectPattern"
+      ],
+      "LVal": [
+        "Identifier",
+        "MemberExpression",
+        "RestElement",
+        "AssignmentPattern",
+        "ArrayPattern",
+        "ObjectPattern",
+        "TSParameterProperty"
+      ],
+      "TSEntityName": [
+        "Identifier",
+        "TSQualifiedName"
+      ],
+      "Literal": [
+        "StringLiteral",
+        "NumericLiteral",
+        "NullLiteral",
+        "BooleanLiteral",
+        "RegExpLiteral",
+        "TemplateLiteral",
+        "BigIntLiteral"
+      ],
+      "Immutable": [
+        "StringLiteral",
+        "NumericLiteral",
+        "NullLiteral",
+        "BooleanLiteral",
+        "JSXAttribute",
+        "JSXClosingElement",
+        "JSXElement",
+        "JSXExpressionContainer",
+        "JSXSpreadChild",
+        "JSXOpeningElement",
+        "JSXText",
+        "JSXFragment",
+        "JSXOpeningFragment",
+        "JSXClosingFragment",
+        "BigIntLiteral"
+      ],
+      "UserWhitespacable": [
+        "ObjectMethod",
+        "ObjectProperty",
+        "ObjectTypeInternalSlot",
+        "ObjectTypeCallProperty",
+        "ObjectTypeIndexer",
+        "ObjectTypeProperty",
+        "ObjectTypeSpreadProperty"
+      ],
+      "Method": [
+        "ObjectMethod",
+        "ClassMethod",
+        "ClassPrivateMethod"
+      ],
+      "ObjectMember": [
+        "ObjectMethod",
+        "ObjectProperty"
+      ],
+      "Property": [
+        "ObjectProperty",
+        "ClassProperty",
+        "ClassPrivateProperty"
+      ],
+      "UnaryLike": [
+        "UnaryExpression",
+        "SpreadElement"
+      ],
+      "Pattern": [
+        "AssignmentPattern",
+        "ArrayPattern",
+        "ObjectPattern"
+      ],
+      "Class": [
+        "ClassDeclaration",
+        "ClassExpression"
+      ],
+      "ModuleDeclaration": [
+        "ExportAllDeclaration",
+        "ExportDefaultDeclaration",
+        "ExportNamedDeclaration",
+        "ImportDeclaration"
+      ],
+      "ExportDeclaration": [
+        "ExportAllDeclaration",
+        "ExportDefaultDeclaration",
+        "ExportNamedDeclaration"
+      ],
+      "ModuleSpecifier": [
+        "ExportSpecifier",
+        "ImportDefaultSpecifier",
+        "ImportNamespaceSpecifier",
+        "ImportSpecifier",
+        "ExportDefaultSpecifier",
+        "ExportNamespaceSpecifier"
+      ],
+      "Flow": [
+        "AnyTypeAnnotation",
+        "ArrayTypeAnnotation",
+        "BooleanTypeAnnotation",
+        "BooleanLiteralTypeAnnotation",
+        "NullLiteralTypeAnnotation",
+        "ClassImplements",
+        "DeclareClass",
+        "DeclareFunction",
+        "DeclareInterface",
+        "DeclareModule",
+        "DeclareModuleExports",
+        "DeclareTypeAlias",
+        "DeclareOpaqueType",
+        "DeclareVariable",
+        "DeclareExportDeclaration",
+        "DeclareExportAllDeclaration",
+        "DeclaredPredicate",
+        "ExistsTypeAnnotation",
+        "FunctionTypeAnnotation",
+        "FunctionTypeParam",
+        "GenericTypeAnnotation",
+        "InferredPredicate",
+        "InterfaceExtends",
+        "InterfaceDeclaration",
+        "InterfaceTypeAnnotation",
+        "IntersectionTypeAnnotation",
+        "MixedTypeAnnotation",
+        "EmptyTypeAnnotation",
+        "NullableTypeAnnotation",
+        "NumberLiteralTypeAnnotation",
+        "NumberTypeAnnotation",
+        "ObjectTypeAnnotation",
+        "ObjectTypeInternalSlot",
+        "ObjectTypeCallProperty",
+        "ObjectTypeIndexer",
+        "ObjectTypeProperty",
+        "ObjectTypeSpreadProperty",
+        "OpaqueType",
+        "QualifiedTypeIdentifier",
+        "StringLiteralTypeAnnotation",
+        "StringTypeAnnotation",
+        "ThisTypeAnnotation",
+        "TupleTypeAnnotation",
+        "TypeofTypeAnnotation",
+        "TypeAlias",
+        "TypeAnnotation",
+        "TypeCastExpression",
+        "TypeParameter",
+        "TypeParameterDeclaration",
+        "TypeParameterInstantiation",
+        "UnionTypeAnnotation",
+        "Variance",
+        "VoidTypeAnnotation"
+      ],
+      "FlowType": [
+        "AnyTypeAnnotation",
+        "ArrayTypeAnnotation",
+        "BooleanTypeAnnotation",
+        "BooleanLiteralTypeAnnotation",
+        "NullLiteralTypeAnnotation",
+        "ExistsTypeAnnotation",
+        "FunctionTypeAnnotation",
+        "GenericTypeAnnotation",
+        "InterfaceTypeAnnotation",
+        "IntersectionTypeAnnotation",
+        "MixedTypeAnnotation",
+        "EmptyTypeAnnotation",
+        "NullableTypeAnnotation",
+        "NumberLiteralTypeAnnotation",
+        "NumberTypeAnnotation",
+        "ObjectTypeAnnotation",
+        "StringLiteralTypeAnnotation",
+        "StringTypeAnnotation",
+        "ThisTypeAnnotation",
+        "TupleTypeAnnotation",
+        "TypeofTypeAnnotation",
+        "UnionTypeAnnotation",
+        "VoidTypeAnnotation"
+      ],
+      "FlowBaseAnnotation": [
+        "AnyTypeAnnotation",
+        "BooleanTypeAnnotation",
+        "NullLiteralTypeAnnotation",
+        "MixedTypeAnnotation",
+        "EmptyTypeAnnotation",
+        "NumberTypeAnnotation",
+        "StringTypeAnnotation",
+        "ThisTypeAnnotation",
+        "VoidTypeAnnotation"
+      ],
+      "FlowDeclaration": [
+        "DeclareClass",
+        "DeclareFunction",
+        "DeclareInterface",
+        "DeclareModule",
+        "DeclareModuleExports",
+        "DeclareTypeAlias",
+        "DeclareOpaqueType",
+        "DeclareVariable",
+        "DeclareExportDeclaration",
+        "DeclareExportAllDeclaration",
+        "InterfaceDeclaration",
+        "OpaqueType",
+        "TypeAlias"
+      ],
+      "FlowPredicate": [
+        "DeclaredPredicate",
+        "InferredPredicate"
+      ],
+      "JSX": [
+        "JSXAttribute",
+        "JSXClosingElement",
+        "JSXElement",
+        "JSXEmptyExpression",
+        "JSXExpressionContainer",
+        "JSXSpreadChild",
+        "JSXIdentifier",
+        "JSXMemberExpression",
+        "JSXNamespacedName",
+        "JSXOpeningElement",
+        "JSXSpreadAttribute",
+        "JSXText",
+        "JSXFragment",
+        "JSXOpeningFragment",
+        "JSXClosingFragment"
+      ],
+      "Private": [
+        "ClassPrivateProperty",
+        "ClassPrivateMethod",
+        "PrivateName"
+      ],
+      "TSTypeElement": [
+        "TSCallSignatureDeclaration",
+        "TSConstructSignatureDeclaration",
+        "TSPropertySignature",
+        "TSMethodSignature",
+        "TSIndexSignature"
+      ],
+      "TSType": [
+        "TSAnyKeyword",
+        "TSUnknownKeyword",
+        "TSNumberKeyword",
+        "TSObjectKeyword",
+        "TSBooleanKeyword",
+        "TSStringKeyword",
+        "TSSymbolKeyword",
+        "TSVoidKeyword",
+        "TSUndefinedKeyword",
+        "TSNullKeyword",
+        "TSNeverKeyword",
+        "TSThisType",
+        "TSFunctionType",
+        "TSConstructorType",
+        "TSTypeReference",
+        "TSTypePredicate",
+        "TSTypeQuery",
+        "TSTypeLiteral",
+        "TSArrayType",
+        "TSTupleType",
+        "TSOptionalType",
+        "TSRestType",
+        "TSUnionType",
+        "TSIntersectionType",
+        "TSConditionalType",
+        "TSInferType",
+        "TSParenthesizedType",
+        "TSTypeOperator",
+        "TSIndexedAccessType",
+        "TSMappedType",
+        "TSLiteralType",
+        "TSExpressionWithTypeArguments",
+        "TSImportType"
+      ]
+    },
+    "NODE_FIELDS": {
+      "ArrayExpression": {
+        "elements": {
+          "default": []
+        }
+      },
+      "AssignmentExpression": {
+        "operator": {
+          "default": null
+        },
+        "left": {
+          "default": null
+        },
+        "right": {
+          "default": null
+        }
+      },
+      "BinaryExpression": {
+        "operator": {
+          "default": null
+        },
+        "left": {
+          "default": null
+        },
+        "right": {
+          "default": null
+        }
+      },
+      "InterpreterDirective": {
+        "value": {
+          "default": null
+        }
+      },
+      "Directive": {
+        "value": {
+          "default": null
+        }
+      },
+      "DirectiveLiteral": {
+        "value": {
+          "default": null
+        }
+      },
+      "BlockStatement": {
+        "directives": {
+          "default": []
+        },
+        "body": {
+          "default": null
+        }
+      },
+      "BreakStatement": {
+        "label": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "CallExpression": {
+        "callee": {
+          "default": null
+        },
+        "arguments": {
+          "default": null
+        },
+        "optional": {
+          "optional": true,
+          "default": null
+        },
+        "typeArguments": {
+          "optional": true,
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "CatchClause": {
+        "param": {
+          "optional": true,
+          "default": null
+        },
+        "body": {
+          "default": null
+        }
+      },
+      "ConditionalExpression": {
+        "test": {
+          "default": null
+        },
+        "consequent": {
+          "default": null
+        },
+        "alternate": {
+          "default": null
+        }
+      },
+      "ContinueStatement": {
+        "label": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "DebuggerStatement": {},
+      "DoWhileStatement": {
+        "test": {
+          "default": null
+        },
+        "body": {
+          "default": null
+        }
+      },
+      "EmptyStatement": {},
+      "ExpressionStatement": {
+        "expression": {
+          "default": null
+        }
+      },
+      "File": {
+        "program": {
+          "default": null
+        },
+        "comments": {
+          "default": null
+        },
+        "tokens": {
+          "default": null
+        }
+      },
+      "ForInStatement": {
+        "left": {
+          "default": null
+        },
+        "right": {
+          "default": null
+        },
+        "body": {
+          "default": null
+        }
+      },
+      "ForStatement": {
+        "init": {
+          "optional": true,
+          "default": null
+        },
+        "test": {
+          "optional": true,
+          "default": null
+        },
+        "update": {
+          "optional": true,
+          "default": null
+        },
+        "body": {
+          "default": null
+        }
+      },
+      "FunctionDeclaration": {
+        "params": {
+          "default": null
+        },
+        "generator": {
+          "default": false,
+          "optional": true
+        },
+        "async": {
+          "default": false,
+          "optional": true
+        },
+        "declare": {
+          "optional": true,
+          "default": null
+        },
+        "id": {
+          "optional": true,
+          "default": null
+        },
+        "returnType": {
+          "optional": true,
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        },
+        "body": {
+          "default": null
+        }
+      },
+      "FunctionExpression": {
+        "params": {
+          "default": null
+        },
+        "generator": {
+          "default": false,
+          "optional": true
+        },
+        "async": {
+          "default": false,
+          "optional": true
+        },
+        "returnType": {
+          "optional": true,
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        },
+        "id": {
+          "optional": true,
+          "default": null
+        },
+        "body": {
+          "default": null
+        }
+      },
+      "Identifier": {
+        "typeAnnotation": {
+          "optional": true,
+          "default": null
+        },
+        "decorators": {
+          "optional": true,
+          "default": null
+        },
+        "name": {
+          "default": null
+        },
+        "optional": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "IfStatement": {
+        "test": {
+          "default": null
+        },
+        "consequent": {
+          "default": null
+        },
+        "alternate": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "LabeledStatement": {
+        "label": {
+          "default": null
+        },
+        "body": {
+          "default": null
+        }
+      },
+      "StringLiteral": {
+        "value": {
+          "default": null
+        }
+      },
+      "NumericLiteral": {
+        "value": {
+          "default": null
+        }
+      },
+      "NullLiteral": {},
+      "BooleanLiteral": {
+        "value": {
+          "default": null
+        }
+      },
+      "RegExpLiteral": {
+        "pattern": {
+          "default": null
+        },
+        "flags": {
+          "default": ""
+        }
+      },
+      "LogicalExpression": {
+        "operator": {
+          "default": null
+        },
+        "left": {
+          "default": null
+        },
+        "right": {
+          "default": null
+        }
+      },
+      "MemberExpression": {
+        "object": {
+          "default": null
+        },
+        "property": {
+          "default": null
+        },
+        "computed": {
+          "default": false
+        },
+        "optional": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "NewExpression": {
+        "callee": {
+          "default": null
+        },
+        "arguments": {
+          "default": null
+        },
+        "optional": {
+          "optional": true,
+          "default": null
+        },
+        "typeArguments": {
+          "optional": true,
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "Program": {
+        "sourceFile": {
+          "optional": true,
+          "default": null
+        },
+        "sourceType": {
+          "default": "script"
+        },
+        "interpreter": {
+          "default": null,
+          "optional": true
+        },
+        "directives": {
+          "default": []
+        },
+        "body": {
+          "default": null
+        }
+      },
+      "ObjectExpression": {
+        "properties": {
+          "default": null
+        }
+      },
+      "ObjectMethod": {
+        "params": {
+          "default": null
+        },
+        "generator": {
+          "default": false,
+          "optional": true
+        },
+        "async": {
+          "default": false,
+          "optional": true
+        },
+        "returnType": {
+          "optional": true,
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        },
+        "kind": {
+          "default": "method"
+        },
+        "computed": {
+          "default": false
+        },
+        "key": {
+          "default": null
+        },
+        "decorators": {
+          "optional": true,
+          "default": null
+        },
+        "body": {
+          "default": null
+        }
+      },
+      "ObjectProperty": {
+        "computed": {
+          "default": false
+        },
+        "key": {
+          "default": null
+        },
+        "value": {
+          "default": null
+        },
+        "shorthand": {
+          "default": false
+        },
+        "decorators": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "RestElement": {
+        "typeAnnotation": {
+          "optional": true,
+          "default": null
+        },
+        "decorators": {
+          "optional": true,
+          "default": null
+        },
+        "argument": {
+          "default": null
+        }
+      },
+      "ReturnStatement": {
+        "argument": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "SequenceExpression": {
+        "expressions": {
+          "default": null
+        }
+      },
+      "ParenthesizedExpression": {
+        "expression": {
+          "default": null
+        }
+      },
+      "SwitchCase": {
+        "test": {
+          "optional": true,
+          "default": null
+        },
+        "consequent": {
+          "default": null
+        }
+      },
+      "SwitchStatement": {
+        "discriminant": {
+          "default": null
+        },
+        "cases": {
+          "default": null
+        }
+      },
+      "ThisExpression": {},
+      "ThrowStatement": {
+        "argument": {
+          "default": null
+        }
+      },
+      "TryStatement": {
+        "block": {
+          "default": null
+        },
+        "handler": {
+          "optional": true,
+          "default": null
+        },
+        "finalizer": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "UnaryExpression": {
+        "prefix": {
+          "default": true
+        },
+        "argument": {
+          "default": null
+        },
+        "operator": {
+          "default": null
+        }
+      },
+      "UpdateExpression": {
+        "prefix": {
+          "default": false
+        },
+        "argument": {
+          "default": null
+        },
+        "operator": {
+          "default": null
+        }
+      },
+      "VariableDeclaration": {
+        "declare": {
+          "optional": true,
+          "default": null
+        },
+        "kind": {
+          "default": null
+        },
+        "declarations": {
+          "default": null
+        }
+      },
+      "VariableDeclarator": {
+        "id": {
+          "default": null
+        },
+        "definite": {
+          "optional": true,
+          "default": null
+        },
+        "init": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "WhileStatement": {
+        "test": {
+          "default": null
+        },
+        "body": {
+          "default": null
+        }
+      },
+      "WithStatement": {
+        "object": {
+          "default": null
+        },
+        "body": {
+          "default": null
+        }
+      },
+      "AssignmentPattern": {
+        "typeAnnotation": {
+          "optional": true,
+          "default": null
+        },
+        "decorators": {
+          "optional": true,
+          "default": null
+        },
+        "left": {
+          "default": null
+        },
+        "right": {
+          "default": null
+        }
+      },
+      "ArrayPattern": {
+        "typeAnnotation": {
+          "optional": true,
+          "default": null
+        },
+        "decorators": {
+          "optional": true,
+          "default": null
+        },
+        "elements": {
+          "default": null
+        }
+      },
+      "ArrowFunctionExpression": {
+        "params": {
+          "default": null
+        },
+        "generator": {
+          "default": false,
+          "optional": true
+        },
+        "async": {
+          "default": false,
+          "optional": true
+        },
+        "returnType": {
+          "optional": true,
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        },
+        "expression": {
+          "optional": true,
+          "default": null
+        },
+        "body": {
+          "default": null
+        }
+      },
+      "ClassBody": {
+        "body": {
+          "default": null
+        }
+      },
+      "ClassDeclaration": {
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        },
+        "body": {
+          "default": null
+        },
+        "superClass": {
+          "optional": true,
+          "default": null
+        },
+        "superTypeParameters": {
+          "optional": true,
+          "default": null
+        },
+        "implements": {
+          "optional": true,
+          "default": null
+        },
+        "declare": {
+          "optional": true,
+          "default": null
+        },
+        "abstract": {
+          "optional": true,
+          "default": null
+        },
+        "id": {
+          "optional": true,
+          "default": null
+        },
+        "decorators": {
+          "optional": true,
+          "default": null
+        },
+        "mixins": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "ClassExpression": {
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        },
+        "body": {
+          "default": null
+        },
+        "superClass": {
+          "optional": true,
+          "default": null
+        },
+        "superTypeParameters": {
+          "optional": true,
+          "default": null
+        },
+        "implements": {
+          "optional": true,
+          "default": null
+        },
+        "id": {
+          "optional": true,
+          "default": null
+        },
+        "decorators": {
+          "optional": true,
+          "default": null
+        },
+        "mixins": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "ExportAllDeclaration": {
+        "source": {
+          "default": null
+        }
+      },
+      "ExportDefaultDeclaration": {
+        "declaration": {
+          "default": null
+        }
+      },
+      "ExportNamedDeclaration": {
+        "declaration": {
+          "optional": true,
+          "default": null
+        },
+        "specifiers": {
+          "default": null
+        },
+        "source": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "ExportSpecifier": {
+        "local": {
+          "default": null
+        },
+        "exported": {
+          "default": null
+        }
+      },
+      "ForOfStatement": {
+        "left": {
+          "default": null
+        },
+        "right": {
+          "default": null
+        },
+        "body": {
+          "default": null
+        },
+        "await": {
+          "default": false,
+          "optional": true
+        }
+      },
+      "ImportDeclaration": {
+        "specifiers": {
+          "default": null
+        },
+        "source": {
+          "default": null
+        },
+        "importKind": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "ImportDefaultSpecifier": {
+        "local": {
+          "default": null
+        }
+      },
+      "ImportNamespaceSpecifier": {
+        "local": {
+          "default": null
+        }
+      },
+      "ImportSpecifier": {
+        "local": {
+          "default": null
+        },
+        "imported": {
+          "default": null
+        },
+        "importKind": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "MetaProperty": {
+        "meta": {
+          "default": null
+        },
+        "property": {
+          "default": null
+        }
+      },
+      "ClassMethod": {
+        "params": {
+          "default": null
+        },
+        "generator": {
+          "default": false,
+          "optional": true
+        },
+        "async": {
+          "default": false,
+          "optional": true
+        },
+        "abstract": {
+          "optional": true,
+          "default": null
+        },
+        "accessibility": {
+          "optional": true,
+          "default": null
+        },
+        "static": {
+          "optional": true,
+          "default": null
+        },
+        "computed": {
+          "default": false,
+          "optional": true
+        },
+        "optional": {
+          "optional": true,
+          "default": null
+        },
+        "key": {
+          "default": null
+        },
+        "kind": {
+          "default": "method",
+          "optional": true
+        },
+        "access": {
+          "optional": true,
+          "default": null
+        },
+        "decorators": {
+          "optional": true,
+          "default": null
+        },
+        "returnType": {
+          "optional": true,
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        },
+        "body": {
+          "default": null
+        }
+      },
+      "ObjectPattern": {
+        "typeAnnotation": {
+          "optional": true,
+          "default": null
+        },
+        "decorators": {
+          "optional": true,
+          "default": null
+        },
+        "properties": {
+          "default": null
+        }
+      },
+      "SpreadElement": {
+        "argument": {
+          "default": null
+        }
+      },
+      "Super": {},
+      "TaggedTemplateExpression": {
+        "tag": {
+          "default": null
+        },
+        "quasi": {
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "TemplateElement": {
+        "value": {
+          "default": null
+        },
+        "tail": {
+          "default": false
+        }
+      },
+      "TemplateLiteral": {
+        "quasis": {
+          "default": null
+        },
+        "expressions": {
+          "default": null
+        }
+      },
+      "YieldExpression": {
+        "delegate": {
+          "default": false
+        },
+        "argument": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "AnyTypeAnnotation": {},
+      "ArrayTypeAnnotation": {
+        "elementType": {
+          "default": null
+        }
+      },
+      "BooleanTypeAnnotation": {},
+      "BooleanLiteralTypeAnnotation": {
+        "value": {
+          "default": null
+        }
+      },
+      "NullLiteralTypeAnnotation": {},
+      "ClassImplements": {
+        "id": {
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "DeclareClass": {
+        "id": {
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        },
+        "extends": {
+          "optional": true,
+          "default": null
+        },
+        "mixins": {
+          "optional": true,
+          "default": null
+        },
+        "implements": {
+          "optional": true,
+          "default": null
+        },
+        "body": {
+          "default": null
+        }
+      },
+      "DeclareFunction": {
+        "id": {
+          "default": null
+        },
+        "predicate": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "DeclareInterface": {
+        "id": {
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        },
+        "extends": {
+          "optional": true,
+          "default": null
+        },
+        "mixins": {
+          "optional": true,
+          "default": null
+        },
+        "implements": {
+          "optional": true,
+          "default": null
+        },
+        "body": {
+          "default": null
+        }
+      },
+      "DeclareModule": {
+        "id": {
+          "default": null
+        },
+        "body": {
+          "default": null
+        },
+        "kind": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "DeclareModuleExports": {
+        "typeAnnotation": {
+          "default": null
+        }
+      },
+      "DeclareTypeAlias": {
+        "id": {
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        },
+        "right": {
+          "default": null
+        }
+      },
+      "DeclareOpaqueType": {
+        "id": {
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        },
+        "supertype": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "DeclareVariable": {
+        "id": {
+          "default": null
+        }
+      },
+      "DeclareExportDeclaration": {
+        "declaration": {
+          "optional": true,
+          "default": null
+        },
+        "specifiers": {
+          "optional": true,
+          "default": null
+        },
+        "source": {
+          "optional": true,
+          "default": null
+        },
+        "default": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "DeclareExportAllDeclaration": {
+        "source": {
+          "default": null
+        },
+        "exportKind": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "DeclaredPredicate": {
+        "value": {
+          "default": null
+        }
+      },
+      "ExistsTypeAnnotation": {},
+      "FunctionTypeAnnotation": {
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        },
+        "params": {
+          "default": null
+        },
+        "rest": {
+          "optional": true,
+          "default": null
+        },
+        "returnType": {
+          "default": null
+        }
+      },
+      "FunctionTypeParam": {
+        "name": {
+          "optional": true,
+          "default": null
+        },
+        "typeAnnotation": {
+          "default": null
+        },
+        "optional": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "GenericTypeAnnotation": {
+        "id": {
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "InferredPredicate": {},
+      "InterfaceExtends": {
+        "id": {
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "InterfaceDeclaration": {
+        "id": {
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        },
+        "extends": {
+          "optional": true,
+          "default": null
+        },
+        "mixins": {
+          "optional": true,
+          "default": null
+        },
+        "implements": {
+          "optional": true,
+          "default": null
+        },
+        "body": {
+          "default": null
+        }
+      },
+      "InterfaceTypeAnnotation": {
+        "extends": {
+          "optional": true,
+          "default": null
+        },
+        "body": {
+          "default": null
+        }
+      },
+      "IntersectionTypeAnnotation": {
+        "types": {
+          "default": null
+        }
+      },
+      "MixedTypeAnnotation": {},
+      "EmptyTypeAnnotation": {},
+      "NullableTypeAnnotation": {
+        "typeAnnotation": {
+          "default": null
+        }
+      },
+      "NumberLiteralTypeAnnotation": {
+        "value": {
+          "default": null
+        }
+      },
+      "NumberTypeAnnotation": {},
+      "ObjectTypeAnnotation": {
+        "properties": {
+          "default": null
+        },
+        "indexers": {
+          "optional": true,
+          "default": null
+        },
+        "callProperties": {
+          "optional": true,
+          "default": null
+        },
+        "internalSlots": {
+          "optional": true,
+          "default": null
+        },
+        "exact": {
+          "default": false
+        },
+        "inexact": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "ObjectTypeInternalSlot": {
+        "id": {
+          "default": null
+        },
+        "value": {
+          "default": null
+        },
+        "optional": {
+          "default": null
+        },
+        "static": {
+          "default": null
+        },
+        "method": {
+          "default": null
+        }
+      },
+      "ObjectTypeCallProperty": {
+        "value": {
+          "default": null
+        },
+        "static": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "ObjectTypeIndexer": {
+        "id": {
+          "optional": true,
+          "default": null
+        },
+        "key": {
+          "default": null
+        },
+        "value": {
+          "default": null
+        },
+        "static": {
+          "optional": true,
+          "default": null
+        },
+        "variance": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "ObjectTypeProperty": {
+        "key": {
+          "default": null
+        },
+        "value": {
+          "default": null
+        },
+        "kind": {
+          "optional": true,
+          "default": null
+        },
+        "static": {
+          "optional": true,
+          "default": null
+        },
+        "proto": {
+          "optional": true,
+          "default": null
+        },
+        "optional": {
+          "optional": true,
+          "default": null
+        },
+        "variance": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "ObjectTypeSpreadProperty": {
+        "argument": {
+          "default": null
+        }
+      },
+      "OpaqueType": {
+        "id": {
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        },
+        "supertype": {
+          "optional": true,
+          "default": null
+        },
+        "impltype": {
+          "default": null
+        }
+      },
+      "QualifiedTypeIdentifier": {
+        "id": {
+          "default": null
+        },
+        "qualification": {
+          "default": null
+        }
+      },
+      "StringLiteralTypeAnnotation": {
+        "value": {
+          "default": null
+        }
+      },
+      "StringTypeAnnotation": {},
+      "ThisTypeAnnotation": {},
+      "TupleTypeAnnotation": {
+        "types": {
+          "default": null
+        }
+      },
+      "TypeofTypeAnnotation": {
+        "argument": {
+          "default": null
+        }
+      },
+      "TypeAlias": {
+        "id": {
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        },
+        "right": {
+          "default": null
+        }
+      },
+      "TypeAnnotation": {
+        "typeAnnotation": {
+          "default": null
+        }
+      },
+      "TypeCastExpression": {
+        "expression": {
+          "default": null
+        },
+        "typeAnnotation": {
+          "default": null
+        }
+      },
+      "TypeParameter": {
+        "name": {
+          "optional": true,
+          "default": null
+        },
+        "bound": {
+          "optional": true,
+          "default": null
+        },
+        "default": {
+          "optional": true,
+          "default": null
+        },
+        "variance": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "TypeParameterDeclaration": {
+        "params": {
+          "default": null
+        }
+      },
+      "TypeParameterInstantiation": {
+        "params": {
+          "default": null
+        }
+      },
+      "UnionTypeAnnotation": {
+        "types": {
+          "default": null
+        }
+      },
+      "Variance": {
+        "kind": {
+          "default": null
+        }
+      },
+      "VoidTypeAnnotation": {},
+      "JSXAttribute": {
+        "name": {
+          "default": null
+        },
+        "value": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "JSXClosingElement": {
+        "name": {
+          "default": null
+        }
+      },
+      "JSXElement": {
+        "openingElement": {
+          "default": null
+        },
+        "closingElement": {
+          "optional": true,
+          "default": null
+        },
+        "children": {
+          "default": null
+        },
+        "selfClosing": {
+          "default": null
+        }
+      },
+      "JSXEmptyExpression": {},
+      "JSXExpressionContainer": {
+        "expression": {
+          "default": null
+        }
+      },
+      "JSXSpreadChild": {
+        "expression": {
+          "default": null
+        }
+      },
+      "JSXIdentifier": {
+        "name": {
+          "default": null
+        }
+      },
+      "JSXMemberExpression": {
+        "object": {
+          "default": null
+        },
+        "property": {
+          "default": null
+        }
+      },
+      "JSXNamespacedName": {
+        "namespace": {
+          "default": null
+        },
+        "name": {
+          "default": null
+        }
+      },
+      "JSXOpeningElement": {
+        "name": {
+          "default": null
+        },
+        "selfClosing": {
+          "default": false
+        },
+        "attributes": {
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "JSXSpreadAttribute": {
+        "argument": {
+          "default": null
+        }
+      },
+      "JSXText": {
+        "value": {
+          "default": null
+        }
+      },
+      "JSXFragment": {
+        "openingFragment": {
+          "default": null
+        },
+        "closingFragment": {
+          "default": null
+        },
+        "children": {
+          "default": null
+        }
+      },
+      "JSXOpeningFragment": {},
+      "JSXClosingFragment": {},
+      "Noop": {},
+      "Placeholder": {
+        "name": {
+          "default": null
+        },
+        "expectedNode": {
+          "default": null
+        }
+      },
+      "ArgumentPlaceholder": {},
+      "AwaitExpression": {
+        "argument": {
+          "default": null
+        }
+      },
+      "BindExpression": {
+        "object": {
+          "default": null
+        },
+        "callee": {
+          "default": null
+        }
+      },
+      "ClassProperty": {
+        "abstract": {
+          "optional": true,
+          "default": null
+        },
+        "accessibility": {
+          "optional": true,
+          "default": null
+        },
+        "static": {
+          "optional": true,
+          "default": null
+        },
+        "computed": {
+          "default": false,
+          "optional": true
+        },
+        "optional": {
+          "optional": true,
+          "default": null
+        },
+        "key": {
+          "default": null
+        },
+        "value": {
+          "optional": true,
+          "default": null
+        },
+        "definite": {
+          "optional": true,
+          "default": null
+        },
+        "typeAnnotation": {
+          "optional": true,
+          "default": null
+        },
+        "decorators": {
+          "optional": true,
+          "default": null
+        },
+        "readonly": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "OptionalMemberExpression": {
+        "object": {
+          "default": null
+        },
+        "property": {
+          "default": null
+        },
+        "computed": {
+          "default": false
+        },
+        "optional": {
+          "default": null
+        }
+      },
+      "PipelineTopicExpression": {
+        "expression": {
+          "default": null
+        }
+      },
+      "PipelineBareFunction": {
+        "callee": {
+          "default": null
+        }
+      },
+      "PipelinePrimaryTopicReference": {},
+      "OptionalCallExpression": {
+        "callee": {
+          "default": null
+        },
+        "arguments": {
+          "default": null
+        },
+        "optional": {
+          "default": null
+        },
+        "typeArguments": {
+          "optional": true,
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "ClassPrivateProperty": {
+        "key": {
+          "default": null
+        },
+        "value": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "ClassPrivateMethod": {
+        "params": {
+          "default": null
+        },
+        "generator": {
+          "default": false,
+          "optional": true
+        },
+        "async": {
+          "default": false,
+          "optional": true
+        },
+        "abstract": {
+          "optional": true,
+          "default": null
+        },
+        "accessibility": {
+          "optional": true,
+          "default": null
+        },
+        "static": {
+          "optional": true,
+          "default": null
+        },
+        "computed": {
+          "default": false,
+          "optional": true
+        },
+        "optional": {
+          "optional": true,
+          "default": null
+        },
+        "key": {
+          "default": null
+        },
+        "kind": {
+          "default": "method",
+          "optional": true
+        },
+        "access": {
+          "optional": true,
+          "default": null
+        },
+        "decorators": {
+          "optional": true,
+          "default": null
+        },
+        "body": {
+          "default": null
+        },
+        "returnType": {
+          "optional": true,
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "Import": {},
+      "Decorator": {
+        "expression": {
+          "default": null
+        }
+      },
+      "DoExpression": {
+        "body": {
+          "default": null
+        }
+      },
+      "ExportDefaultSpecifier": {
+        "exported": {
+          "default": null
+        }
+      },
+      "ExportNamespaceSpecifier": {
+        "exported": {
+          "default": null
+        }
+      },
+      "PrivateName": {
+        "id": {
+          "default": null
+        }
+      },
+      "BigIntLiteral": {
+        "value": {
+          "default": null
+        }
+      },
+      "TSParameterProperty": {
+        "accessibility": {
+          "optional": true,
+          "default": null
+        },
+        "readonly": {
+          "optional": true,
+          "default": null
+        },
+        "parameter": {
+          "default": null
+        }
+      },
+      "TSDeclareFunction": {
+        "params": {
+          "default": null
+        },
+        "generator": {
+          "default": false,
+          "optional": true
+        },
+        "async": {
+          "default": false,
+          "optional": true
+        },
+        "declare": {
+          "optional": true,
+          "default": null
+        },
+        "id": {
+          "optional": true,
+          "default": null
+        },
+        "returnType": {
+          "optional": true,
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "TSDeclareMethod": {
+        "params": {
+          "default": null
+        },
+        "generator": {
+          "default": false,
+          "optional": true
+        },
+        "async": {
+          "default": false,
+          "optional": true
+        },
+        "abstract": {
+          "optional": true,
+          "default": null
+        },
+        "accessibility": {
+          "optional": true,
+          "default": null
+        },
+        "static": {
+          "optional": true,
+          "default": null
+        },
+        "computed": {
+          "default": false,
+          "optional": true
+        },
+        "optional": {
+          "optional": true,
+          "default": null
+        },
+        "key": {
+          "default": null
+        },
+        "kind": {
+          "default": "method",
+          "optional": true
+        },
+        "access": {
+          "optional": true,
+          "default": null
+        },
+        "decorators": {
+          "optional": true,
+          "default": null
+        },
+        "returnType": {
+          "optional": true,
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "TSQualifiedName": {
+        "left": {
+          "default": null
+        },
+        "right": {
+          "default": null
+        }
+      },
+      "TSCallSignatureDeclaration": {
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        },
+        "parameters": {
+          "default": null
+        },
+        "typeAnnotation": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "TSConstructSignatureDeclaration": {
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        },
+        "parameters": {
+          "default": null
+        },
+        "typeAnnotation": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "TSPropertySignature": {
+        "key": {
+          "default": null
+        },
+        "computed": {
+          "optional": true,
+          "default": null
+        },
+        "optional": {
+          "optional": true,
+          "default": null
+        },
+        "readonly": {
+          "optional": true,
+          "default": null
+        },
+        "typeAnnotation": {
+          "optional": true,
+          "default": null
+        },
+        "initializer": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "TSMethodSignature": {
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        },
+        "parameters": {
+          "default": null
+        },
+        "typeAnnotation": {
+          "optional": true,
+          "default": null
+        },
+        "key": {
+          "default": null
+        },
+        "computed": {
+          "optional": true,
+          "default": null
+        },
+        "optional": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "TSIndexSignature": {
+        "readonly": {
+          "optional": true,
+          "default": null
+        },
+        "parameters": {
+          "default": null
+        },
+        "typeAnnotation": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "TSAnyKeyword": {},
+      "TSUnknownKeyword": {},
+      "TSNumberKeyword": {},
+      "TSObjectKeyword": {},
+      "TSBooleanKeyword": {},
+      "TSStringKeyword": {},
+      "TSSymbolKeyword": {},
+      "TSVoidKeyword": {},
+      "TSUndefinedKeyword": {},
+      "TSNullKeyword": {},
+      "TSNeverKeyword": {},
+      "TSThisType": {},
+      "TSFunctionType": {
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        },
+        "parameters": {
+          "default": null
+        },
+        "typeAnnotation": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "TSConstructorType": {
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        },
+        "parameters": {
+          "default": null
+        },
+        "typeAnnotation": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "TSTypeReference": {
+        "typeName": {
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "TSTypePredicate": {
+        "parameterName": {
+          "default": null
+        },
+        "typeAnnotation": {
+          "default": null
+        }
+      },
+      "TSTypeQuery": {
+        "exprName": {
+          "default": null
+        }
+      },
+      "TSTypeLiteral": {
+        "members": {
+          "default": null
+        }
+      },
+      "TSArrayType": {
+        "elementType": {
+          "default": null
+        }
+      },
+      "TSTupleType": {
+        "elementTypes": {
+          "default": null
+        }
+      },
+      "TSOptionalType": {
+        "typeAnnotation": {
+          "default": null
+        }
+      },
+      "TSRestType": {
+        "typeAnnotation": {
+          "default": null
+        }
+      },
+      "TSUnionType": {
+        "types": {
+          "default": null
+        }
+      },
+      "TSIntersectionType": {
+        "types": {
+          "default": null
+        }
+      },
+      "TSConditionalType": {
+        "checkType": {
+          "default": null
+        },
+        "extendsType": {
+          "default": null
+        },
+        "trueType": {
+          "default": null
+        },
+        "falseType": {
+          "default": null
+        }
+      },
+      "TSInferType": {
+        "typeParameter": {
+          "default": null
+        }
+      },
+      "TSParenthesizedType": {
+        "typeAnnotation": {
+          "default": null
+        }
+      },
+      "TSTypeOperator": {
+        "operator": {
+          "optional": true,
+          "default": null
+        },
+        "typeAnnotation": {
+          "default": null
+        }
+      },
+      "TSIndexedAccessType": {
+        "objectType": {
+          "default": null
+        },
+        "indexType": {
+          "default": null
+        }
+      },
+      "TSMappedType": {
+        "readonly": {
+          "optional": true,
+          "default": null
+        },
+        "typeParameter": {
+          "default": null
+        },
+        "optional": {
+          "optional": true,
+          "default": null
+        },
+        "typeAnnotation": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "TSLiteralType": {
+        "literal": {
+          "default": null
+        }
+      },
+      "TSExpressionWithTypeArguments": {
+        "expression": {
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "TSInterfaceDeclaration": {
+        "declare": {
+          "optional": true,
+          "default": null
+        },
+        "id": {
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        },
+        "extends": {
+          "optional": true,
+          "default": null
+        },
+        "body": {
+          "default": null
+        }
+      },
+      "TSInterfaceBody": {
+        "body": {
+          "default": null
+        }
+      },
+      "TSTypeAliasDeclaration": {
+        "declare": {
+          "optional": true,
+          "default": null
+        },
+        "id": {
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        },
+        "typeAnnotation": {
+          "default": null
+        }
+      },
+      "TSAsExpression": {
+        "expression": {
+          "default": null
+        },
+        "typeAnnotation": {
+          "default": null
+        }
+      },
+      "TSTypeAssertion": {
+        "typeAnnotation": {
+          "default": null
+        },
+        "expression": {
+          "default": null
+        }
+      },
+      "TSEnumDeclaration": {
+        "declare": {
+          "optional": true,
+          "default": null
+        },
+        "const": {
+          "optional": true,
+          "default": null
+        },
+        "id": {
+          "default": null
+        },
+        "members": {
+          "default": null
+        },
+        "initializer": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "TSEnumMember": {
+        "id": {
+          "default": null
+        },
+        "initializer": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "TSModuleDeclaration": {
+        "declare": {
+          "optional": true,
+          "default": null
+        },
+        "global": {
+          "optional": true,
+          "default": null
+        },
+        "id": {
+          "default": null
+        },
+        "body": {
+          "default": null
+        }
+      },
+      "TSModuleBlock": {
+        "body": {
+          "default": null
+        }
+      },
+      "TSImportType": {
+        "argument": {
+          "default": null
+        },
+        "qualifier": {
+          "optional": true,
+          "default": null
+        },
+        "typeParameters": {
+          "optional": true,
+          "default": null
+        }
+      },
+      "TSImportEqualsDeclaration": {
+        "isExport": {
+          "optional": true,
+          "default": null
+        },
+        "id": {
+          "default": null
+        },
+        "moduleReference": {
+          "default": null
+        }
+      },
+      "TSExternalModuleReference": {
+        "expression": {
+          "default": null
+        }
+      },
+      "TSNonNullExpression": {
+        "expression": {
+          "default": null
+        }
+      },
+      "TSExportAssignment": {
+        "expression": {
+          "default": null
+        }
+      },
+      "TSNamespaceExportDeclaration": {
+        "id": {
+          "default": null
+        }
+      },
+      "TSTypeAnnotation": {
+        "typeAnnotation": {
+          "default": null
+        }
+      },
+      "TSTypeParameterInstantiation": {
+        "params": {
+          "default": null
+        }
+      },
+      "TSTypeParameterDeclaration": {
+        "params": {
+          "default": null
+        }
+      },
+      "TSTypeParameter": {
+        "name": {
+          "optional": true,
+          "default": null
+        },
+        "constraint": {
+          "optional": true,
+          "default": null
+        },
+        "default": {
+          "optional": true,
+          "default": null
+        }
+      }
+    },
+    "BUILDER_KEYS": {
+      "ArrayExpression": [
+        "elements"
+      ],
+      "AssignmentExpression": [
+        "operator",
+        "left",
+        "right"
+      ],
+      "BinaryExpression": [
+        "operator",
+        "left",
+        "right"
+      ],
+      "InterpreterDirective": [
+        "value"
+      ],
+      "Directive": [
+        "value"
+      ],
+      "DirectiveLiteral": [
+        "value"
+      ],
+      "BlockStatement": [
+        "body",
+        "directives"
+      ],
+      "BreakStatement": [
+        "label"
+      ],
+      "CallExpression": [
+        "callee",
+        "arguments"
+      ],
+      "CatchClause": [
+        "param",
+        "body"
+      ],
+      "ConditionalExpression": [
+        "test",
+        "consequent",
+        "alternate"
+      ],
+      "ContinueStatement": [
+        "label"
+      ],
+      "DebuggerStatement": [],
+      "DoWhileStatement": [
+        "test",
+        "body"
+      ],
+      "EmptyStatement": [],
+      "ExpressionStatement": [
+        "expression"
+      ],
+      "File": [
+        "program",
+        "comments",
+        "tokens"
+      ],
+      "ForInStatement": [
+        "left",
+        "right",
+        "body"
+      ],
+      "ForStatement": [
+        "init",
+        "test",
+        "update",
+        "body"
+      ],
+      "FunctionDeclaration": [
+        "id",
+        "params",
+        "body",
+        "generator",
+        "async"
+      ],
+      "FunctionExpression": [
+        "id",
+        "params",
+        "body",
+        "generator",
+        "async"
+      ],
+      "Identifier": [
+        "name"
+      ],
+      "IfStatement": [
+        "test",
+        "consequent",
+        "alternate"
+      ],
+      "LabeledStatement": [
+        "label",
+        "body"
+      ],
+      "StringLiteral": [
+        "value"
+      ],
+      "NumericLiteral": [
+        "value"
+      ],
+      "NullLiteral": [],
+      "BooleanLiteral": [
+        "value"
+      ],
+      "RegExpLiteral": [
+        "pattern",
+        "flags"
+      ],
+      "LogicalExpression": [
+        "operator",
+        "left",
+        "right"
+      ],
+      "MemberExpression": [
+        "object",
+        "property",
+        "computed",
+        "optional"
+      ],
+      "NewExpression": [
+        "callee",
+        "arguments"
+      ],
+      "Program": [
+        "body",
+        "directives",
+        "sourceType",
+        "interpreter"
+      ],
+      "ObjectExpression": [
+        "properties"
+      ],
+      "ObjectMethod": [
+        "kind",
+        "key",
+        "params",
+        "body",
+        "computed"
+      ],
+      "ObjectProperty": [
+        "key",
+        "value",
+        "computed",
+        "shorthand",
+        "decorators"
+      ],
+      "RestElement": [
+        "argument"
+      ],
+      "ReturnStatement": [
+        "argument"
+      ],
+      "SequenceExpression": [
+        "expressions"
+      ],
+      "ParenthesizedExpression": [
+        "expression"
+      ],
+      "SwitchCase": [
+        "test",
+        "consequent"
+      ],
+      "SwitchStatement": [
+        "discriminant",
+        "cases"
+      ],
+      "ThisExpression": [],
+      "ThrowStatement": [
+        "argument"
+      ],
+      "TryStatement": [
+        "block",
+        "handler",
+        "finalizer"
+      ],
+      "UnaryExpression": [
+        "operator",
+        "argument",
+        "prefix"
+      ],
+      "UpdateExpression": [
+        "operator",
+        "argument",
+        "prefix"
+      ],
+      "VariableDeclaration": [
+        "kind",
+        "declarations"
+      ],
+      "VariableDeclarator": [
+        "id",
+        "init"
+      ],
+      "WhileStatement": [
+        "test",
+        "body"
+      ],
+      "WithStatement": [
+        "object",
+        "body"
+      ],
+      "AssignmentPattern": [
+        "left",
+        "right"
+      ],
+      "ArrayPattern": [
+        "elements"
+      ],
+      "ArrowFunctionExpression": [
+        "params",
+        "body",
+        "async"
+      ],
+      "ClassBody": [
+        "body"
+      ],
+      "ClassDeclaration": [
+        "id",
+        "superClass",
+        "body",
+        "decorators"
+      ],
+      "ClassExpression": [
+        "id",
+        "superClass",
+        "body",
+        "decorators"
+      ],
+      "ExportAllDeclaration": [
+        "source"
+      ],
+      "ExportDefaultDeclaration": [
+        "declaration"
+      ],
+      "ExportNamedDeclaration": [
+        "declaration",
+        "specifiers",
+        "source"
+      ],
+      "ExportSpecifier": [
+        "local",
+        "exported"
+      ],
+      "ForOfStatement": [
+        "left",
+        "right",
+        "body"
+      ],
+      "ImportDeclaration": [
+        "specifiers",
+        "source"
+      ],
+      "ImportDefaultSpecifier": [
+        "local"
+      ],
+      "ImportNamespaceSpecifier": [
+        "local"
+      ],
+      "ImportSpecifier": [
+        "local",
+        "imported"
+      ],
+      "MetaProperty": [
+        "meta",
+        "property"
+      ],
+      "ClassMethod": [
+        "kind",
+        "key",
+        "params",
+        "body",
+        "computed",
+        "static"
+      ],
+      "ObjectPattern": [
+        "properties"
+      ],
+      "SpreadElement": [
+        "argument"
+      ],
+      "Super": [],
+      "TaggedTemplateExpression": [
+        "tag",
+        "quasi"
+      ],
+      "TemplateElement": [
+        "value",
+        "tail"
+      ],
+      "TemplateLiteral": [
+        "quasis",
+        "expressions"
+      ],
+      "YieldExpression": [
+        "argument",
+        "delegate"
+      ],
+      "AnyTypeAnnotation": [],
+      "ArrayTypeAnnotation": [
+        "elementType"
+      ],
+      "BooleanTypeAnnotation": [],
+      "BooleanLiteralTypeAnnotation": [
+        "value"
+      ],
+      "NullLiteralTypeAnnotation": [],
+      "ClassImplements": [
+        "id",
+        "typeParameters"
+      ],
+      "DeclareClass": [
+        "id",
+        "typeParameters",
+        "extends",
+        "body"
+      ],
+      "DeclareFunction": [
+        "id"
+      ],
+      "DeclareInterface": [
+        "id",
+        "typeParameters",
+        "extends",
+        "body"
+      ],
+      "DeclareModule": [
+        "id",
+        "body",
+        "kind"
+      ],
+      "DeclareModuleExports": [
+        "typeAnnotation"
+      ],
+      "DeclareTypeAlias": [
+        "id",
+        "typeParameters",
+        "right"
+      ],
+      "DeclareOpaqueType": [
+        "id",
+        "typeParameters",
+        "supertype"
+      ],
+      "DeclareVariable": [
+        "id"
+      ],
+      "DeclareExportDeclaration": [
+        "declaration",
+        "specifiers",
+        "source"
+      ],
+      "DeclareExportAllDeclaration": [
+        "source"
+      ],
+      "DeclaredPredicate": [
+        "value"
+      ],
+      "ExistsTypeAnnotation": [],
+      "FunctionTypeAnnotation": [
+        "typeParameters",
+        "params",
+        "rest",
+        "returnType"
+      ],
+      "FunctionTypeParam": [
+        "name",
+        "typeAnnotation"
+      ],
+      "GenericTypeAnnotation": [
+        "id",
+        "typeParameters"
+      ],
+      "InferredPredicate": [],
+      "InterfaceExtends": [
+        "id",
+        "typeParameters"
+      ],
+      "InterfaceDeclaration": [
+        "id",
+        "typeParameters",
+        "extends",
+        "body"
+      ],
+      "InterfaceTypeAnnotation": [
+        "extends",
+        "body"
+      ],
+      "IntersectionTypeAnnotation": [
+        "types"
+      ],
+      "MixedTypeAnnotation": [],
+      "EmptyTypeAnnotation": [],
+      "NullableTypeAnnotation": [
+        "typeAnnotation"
+      ],
+      "NumberLiteralTypeAnnotation": [
+        "value"
+      ],
+      "NumberTypeAnnotation": [],
+      "ObjectTypeAnnotation": [
+        "properties",
+        "indexers",
+        "callProperties",
+        "internalSlots",
+        "exact"
+      ],
+      "ObjectTypeInternalSlot": [
+        "id",
+        "value",
+        "optional",
+        "static",
+        "method"
+      ],
+      "ObjectTypeCallProperty": [
+        "value"
+      ],
+      "ObjectTypeIndexer": [
+        "id",
+        "key",
+        "value",
+        "variance"
+      ],
+      "ObjectTypeProperty": [
+        "key",
+        "value",
+        "variance"
+      ],
+      "ObjectTypeSpreadProperty": [
+        "argument"
+      ],
+      "OpaqueType": [
+        "id",
+        "typeParameters",
+        "supertype",
+        "impltype"
+      ],
+      "QualifiedTypeIdentifier": [
+        "id",
+        "qualification"
+      ],
+      "StringLiteralTypeAnnotation": [
+        "value"
+      ],
+      "StringTypeAnnotation": [],
+      "ThisTypeAnnotation": [],
+      "TupleTypeAnnotation": [
+        "types"
+      ],
+      "TypeofTypeAnnotation": [
+        "argument"
+      ],
+      "TypeAlias": [
+        "id",
+        "typeParameters",
+        "right"
+      ],
+      "TypeAnnotation": [
+        "typeAnnotation"
+      ],
+      "TypeCastExpression": [
+        "expression",
+        "typeAnnotation"
+      ],
+      "TypeParameter": [
+        "bound",
+        "default",
+        "variance"
+      ],
+      "TypeParameterDeclaration": [
+        "params"
+      ],
+      "TypeParameterInstantiation": [
+        "params"
+      ],
+      "UnionTypeAnnotation": [
+        "types"
+      ],
+      "Variance": [
+        "kind"
+      ],
+      "VoidTypeAnnotation": [],
+      "JSXAttribute": [
+        "name",
+        "value"
+      ],
+      "JSXClosingElement": [
+        "name"
+      ],
+      "JSXElement": [
+        "openingElement",
+        "closingElement",
+        "children",
+        "selfClosing"
+      ],
+      "JSXEmptyExpression": [],
+      "JSXExpressionContainer": [
+        "expression"
+      ],
+      "JSXSpreadChild": [
+        "expression"
+      ],
+      "JSXIdentifier": [
+        "name"
+      ],
+      "JSXMemberExpression": [
+        "object",
+        "property"
+      ],
+      "JSXNamespacedName": [
+        "namespace",
+        "name"
+      ],
+      "JSXOpeningElement": [
+        "name",
+        "attributes",
+        "selfClosing"
+      ],
+      "JSXSpreadAttribute": [
+        "argument"
+      ],
+      "JSXText": [
+        "value"
+      ],
+      "JSXFragment": [
+        "openingFragment",
+        "closingFragment",
+        "children"
+      ],
+      "JSXOpeningFragment": [],
+      "JSXClosingFragment": [],
+      "Noop": [],
+      "Placeholder": [
+        "expectedNode",
+        "name"
+      ],
+      "ArgumentPlaceholder": [],
+      "AwaitExpression": [
+        "argument"
+      ],
+      "BindExpression": [
+        "object",
+        "callee"
+      ],
+      "ClassProperty": [
+        "key",
+        "value",
+        "typeAnnotation",
+        "decorators",
+        "computed"
+      ],
+      "OptionalMemberExpression": [
+        "object",
+        "property",
+        "computed",
+        "optional"
+      ],
+      "PipelineTopicExpression": [
+        "expression"
+      ],
+      "PipelineBareFunction": [
+        "callee"
+      ],
+      "PipelinePrimaryTopicReference": [],
+      "OptionalCallExpression": [
+        "callee",
+        "arguments",
+        "optional"
+      ],
+      "ClassPrivateProperty": [
+        "key",
+        "value"
+      ],
+      "ClassPrivateMethod": [
+        "kind",
+        "key",
+        "params",
+        "body",
+        "static"
+      ],
+      "Import": [],
+      "Decorator": [
+        "expression"
+      ],
+      "DoExpression": [
+        "body"
+      ],
+      "ExportDefaultSpecifier": [
+        "exported"
+      ],
+      "ExportNamespaceSpecifier": [
+        "exported"
+      ],
+      "PrivateName": [
+        "id"
+      ],
+      "BigIntLiteral": [
+        "value"
+      ],
+      "TSParameterProperty": [
+        "parameter"
+      ],
+      "TSDeclareFunction": [
+        "id",
+        "typeParameters",
+        "params",
+        "returnType"
+      ],
+      "TSDeclareMethod": [
+        "decorators",
+        "key",
+        "typeParameters",
+        "params",
+        "returnType"
+      ],
+      "TSQualifiedName": [
+        "left",
+        "right"
+      ],
+      "TSCallSignatureDeclaration": [
+        "typeParameters",
+        "parameters",
+        "typeAnnotation"
+      ],
+      "TSConstructSignatureDeclaration": [
+        "typeParameters",
+        "parameters",
+        "typeAnnotation"
+      ],
+      "TSPropertySignature": [
+        "key",
+        "typeAnnotation",
+        "initializer"
+      ],
+      "TSMethodSignature": [
+        "key",
+        "typeParameters",
+        "parameters",
+        "typeAnnotation"
+      ],
+      "TSIndexSignature": [
+        "parameters",
+        "typeAnnotation"
+      ],
+      "TSAnyKeyword": [],
+      "TSUnknownKeyword": [],
+      "TSNumberKeyword": [],
+      "TSObjectKeyword": [],
+      "TSBooleanKeyword": [],
+      "TSStringKeyword": [],
+      "TSSymbolKeyword": [],
+      "TSVoidKeyword": [],
+      "TSUndefinedKeyword": [],
+      "TSNullKeyword": [],
+      "TSNeverKeyword": [],
+      "TSThisType": [],
+      "TSFunctionType": [
+        "typeParameters",
+        "parameters",
+        "typeAnnotation"
+      ],
+      "TSConstructorType": [
+        "typeParameters",
+        "parameters",
+        "typeAnnotation"
+      ],
+      "TSTypeReference": [
+        "typeName",
+        "typeParameters"
+      ],
+      "TSTypePredicate": [
+        "parameterName",
+        "typeAnnotation"
+      ],
+      "TSTypeQuery": [
+        "exprName"
+      ],
+      "TSTypeLiteral": [
+        "members"
+      ],
+      "TSArrayType": [
+        "elementType"
+      ],
+      "TSTupleType": [
+        "elementTypes"
+      ],
+      "TSOptionalType": [
+        "typeAnnotation"
+      ],
+      "TSRestType": [
+        "typeAnnotation"
+      ],
+      "TSUnionType": [
+        "types"
+      ],
+      "TSIntersectionType": [
+        "types"
+      ],
+      "TSConditionalType": [
+        "checkType",
+        "extendsType",
+        "trueType",
+        "falseType"
+      ],
+      "TSInferType": [
+        "typeParameter"
+      ],
+      "TSParenthesizedType": [
+        "typeAnnotation"
+      ],
+      "TSTypeOperator": [
+        "typeAnnotation"
+      ],
+      "TSIndexedAccessType": [
+        "objectType",
+        "indexType"
+      ],
+      "TSMappedType": [
+        "typeParameter",
+        "typeAnnotation"
+      ],
+      "TSLiteralType": [
+        "literal"
+      ],
+      "TSExpressionWithTypeArguments": [
+        "expression",
+        "typeParameters"
+      ],
+      "TSInterfaceDeclaration": [
+        "id",
+        "typeParameters",
+        "extends",
+        "body"
+      ],
+      "TSInterfaceBody": [
+        "body"
+      ],
+      "TSTypeAliasDeclaration": [
+        "id",
+        "typeParameters",
+        "typeAnnotation"
+      ],
+      "TSAsExpression": [
+        "expression",
+        "typeAnnotation"
+      ],
+      "TSTypeAssertion": [
+        "typeAnnotation",
+        "expression"
+      ],
+      "TSEnumDeclaration": [
+        "id",
+        "members"
+      ],
+      "TSEnumMember": [
+        "id",
+        "initializer"
+      ],
+      "TSModuleDeclaration": [
+        "id",
+        "body"
+      ],
+      "TSModuleBlock": [
+        "body"
+      ],
+      "TSImportType": [
+        "argument",
+        "qualifier",
+        "typeParameters"
+      ],
+      "TSImportEqualsDeclaration": [
+        "id",
+        "moduleReference"
+      ],
+      "TSExternalModuleReference": [
+        "expression"
+      ],
+      "TSNonNullExpression": [
+        "expression"
+      ],
+      "TSExportAssignment": [
+        "expression"
+      ],
+      "TSNamespaceExportDeclaration": [
+        "id"
+      ],
+      "TSTypeAnnotation": [
+        "typeAnnotation"
+      ],
+      "TSTypeParameterInstantiation": [
+        "params"
+      ],
+      "TSTypeParameterDeclaration": [
+        "params"
+      ],
+      "TSTypeParameter": [
+        "constraint",
+        "default"
+      ]
+    },
+    "DEPRECATED_KEYS": {
+      "NumberLiteral": "NumericLiteral",
+      "RegexLiteral": "RegExpLiteral",
+      "RestProperty": "RestElement",
+      "SpreadProperty": "SpreadElement"
+    },
+    "PLACEHOLDERS": [
+      "Identifier",
+      "StringLiteral",
+      "Expression",
+      "Statement",
+      "Declaration",
+      "BlockStatement",
+      "ClassBody",
+      "Pattern"
+    ],
+    "PLACEHOLDERS_ALIAS": {
+      "Declaration": [
+        "Statement"
+      ],
+      "Pattern": [
+        "PatternLike",
+        "LVal"
+      ],
+      "Identifier": [
+        "Expression",
+        "PatternLike",
+        "LVal",
+        "TSEntityName"
+      ],
+      "StringLiteral": [
+        "Expression",
+        "Pureish",
+        "Literal",
+        "Immutable"
+      ],
+      "BlockStatement": [
+        "Scopable",
+        "BlockParent",
+        "Block",
+        "Statement"
+      ]
+    },
+    "PLACEHOLDERS_FLIPPED_ALIAS": {
+      "Statement": [
+        "Declaration",
+        "BlockStatement"
+      ],
+      "PatternLike": [
+        "Pattern",
+        "Identifier"
+      ],
+      "LVal": [
+        "Pattern",
+        "Identifier"
+      ],
+      "Expression": [
+        "Identifier",
+        "StringLiteral"
+      ],
+      "TSEntityName": [
+        "Identifier"
+      ],
+      "Pureish": [
+        "StringLiteral"
+      ],
+      "Literal": [
+        "StringLiteral"
+      ],
+      "Immutable": [
+        "StringLiteral"
+      ],
+      "Scopable": [
+        "BlockStatement"
+      ],
+      "BlockParent": [
+        "BlockStatement"
+      ],
+      "Block": [
+        "BlockStatement"
+      ]
+    },
+    "TYPES": [
+      "ArrayExpression",
+      "AssignmentExpression",
+      "BinaryExpression",
+      "InterpreterDirective",
+      "Directive",
+      "DirectiveLiteral",
+      "BlockStatement",
+      "BreakStatement",
+      "CallExpression",
+      "CatchClause",
+      "ConditionalExpression",
+      "ContinueStatement",
+      "DebuggerStatement",
+      "DoWhileStatement",
+      "EmptyStatement",
+      "ExpressionStatement",
+      "File",
+      "ForInStatement",
+      "ForStatement",
+      "FunctionDeclaration",
+      "FunctionExpression",
+      "Identifier",
+      "IfStatement",
+      "LabeledStatement",
+      "StringLiteral",
+      "NumericLiteral",
+      "NullLiteral",
+      "BooleanLiteral",
+      "RegExpLiteral",
+      "LogicalExpression",
+      "MemberExpression",
+      "NewExpression",
+      "Program",
+      "ObjectExpression",
+      "ObjectMethod",
+      "ObjectProperty",
+      "RestElement",
+      "ReturnStatement",
+      "SequenceExpression",
+      "ParenthesizedExpression",
+      "SwitchCase",
+      "SwitchStatement",
+      "ThisExpression",
+      "ThrowStatement",
+      "TryStatement",
+      "UnaryExpression",
+      "UpdateExpression",
+      "VariableDeclaration",
+      "VariableDeclarator",
+      "WhileStatement",
+      "WithStatement",
+      "AssignmentPattern",
+      "ArrayPattern",
+      "ArrowFunctionExpression",
+      "ClassBody",
+      "ClassDeclaration",
+      "ClassExpression",
+      "ExportAllDeclaration",
+      "ExportDefaultDeclaration",
+      "ExportNamedDeclaration",
+      "ExportSpecifier",
+      "ForOfStatement",
+      "ImportDeclaration",
+      "ImportDefaultSpecifier",
+      "ImportNamespaceSpecifier",
+      "ImportSpecifier",
+      "MetaProperty",
+      "ClassMethod",
+      "ObjectPattern",
+      "SpreadElement",
+      "Super",
+      "TaggedTemplateExpression",
+      "TemplateElement",
+      "TemplateLiteral",
+      "YieldExpression",
+      "AnyTypeAnnotation",
+      "ArrayTypeAnnotation",
+      "BooleanTypeAnnotation",
+      "BooleanLiteralTypeAnnotation",
+      "NullLiteralTypeAnnotation",
+      "ClassImplements",
+      "DeclareClass",
+      "DeclareFunction",
+      "DeclareInterface",
+      "DeclareModule",
+      "DeclareModuleExports",
+      "DeclareTypeAlias",
+      "DeclareOpaqueType",
+      "DeclareVariable",
+      "DeclareExportDeclaration",
+      "DeclareExportAllDeclaration",
+      "DeclaredPredicate",
+      "ExistsTypeAnnotation",
+      "FunctionTypeAnnotation",
+      "FunctionTypeParam",
+      "GenericTypeAnnotation",
+      "InferredPredicate",
+      "InterfaceExtends",
+      "InterfaceDeclaration",
+      "InterfaceTypeAnnotation",
+      "IntersectionTypeAnnotation",
+      "MixedTypeAnnotation",
+      "EmptyTypeAnnotation",
+      "NullableTypeAnnotation",
+      "NumberLiteralTypeAnnotation",
+      "NumberTypeAnnotation",
+      "ObjectTypeAnnotation",
+      "ObjectTypeInternalSlot",
+      "ObjectTypeCallProperty",
+      "ObjectTypeIndexer",
+      "ObjectTypeProperty",
+      "ObjectTypeSpreadProperty",
+      "OpaqueType",
+      "QualifiedTypeIdentifier",
+      "StringLiteralTypeAnnotation",
+      "StringTypeAnnotation",
+      "ThisTypeAnnotation",
+      "TupleTypeAnnotation",
+      "TypeofTypeAnnotation",
+      "TypeAlias",
+      "TypeAnnotation",
+      "TypeCastExpression",
+      "TypeParameter",
+      "TypeParameterDeclaration",
+      "TypeParameterInstantiation",
+      "UnionTypeAnnotation",
+      "Variance",
+      "VoidTypeAnnotation",
+      "JSXAttribute",
+      "JSXClosingElement",
+      "JSXElement",
+      "JSXEmptyExpression",
+      "JSXExpressionContainer",
+      "JSXSpreadChild",
+      "JSXIdentifier",
+      "JSXMemberExpression",
+      "JSXNamespacedName",
+      "JSXOpeningElement",
+      "JSXSpreadAttribute",
+      "JSXText",
+      "JSXFragment",
+      "JSXOpeningFragment",
+      "JSXClosingFragment",
+      "Noop",
+      "Placeholder",
+      "ArgumentPlaceholder",
+      "AwaitExpression",
+      "BindExpression",
+      "ClassProperty",
+      "OptionalMemberExpression",
+      "PipelineTopicExpression",
+      "PipelineBareFunction",
+      "PipelinePrimaryTopicReference",
+      "OptionalCallExpression",
+      "ClassPrivateProperty",
+      "ClassPrivateMethod",
+      "Import",
+      "Decorator",
+      "DoExpression",
+      "ExportDefaultSpecifier",
+      "ExportNamespaceSpecifier",
+      "PrivateName",
+      "BigIntLiteral",
+      "TSParameterProperty",
+      "TSDeclareFunction",
+      "TSDeclareMethod",
+      "TSQualifiedName",
+      "TSCallSignatureDeclaration",
+      "TSConstructSignatureDeclaration",
+      "TSPropertySignature",
+      "TSMethodSignature",
+      "TSIndexSignature",
+      "TSAnyKeyword",
+      "TSUnknownKeyword",
+      "TSNumberKeyword",
+      "TSObjectKeyword",
+      "TSBooleanKeyword",
+      "TSStringKeyword",
+      "TSSymbolKeyword",
+      "TSVoidKeyword",
+      "TSUndefinedKeyword",
+      "TSNullKeyword",
+      "TSNeverKeyword",
+      "TSThisType",
+      "TSFunctionType",
+      "TSConstructorType",
+      "TSTypeReference",
+      "TSTypePredicate",
+      "TSTypeQuery",
+      "TSTypeLiteral",
+      "TSArrayType",
+      "TSTupleType",
+      "TSOptionalType",
+      "TSRestType",
+      "TSUnionType",
+      "TSIntersectionType",
+      "TSConditionalType",
+      "TSInferType",
+      "TSParenthesizedType",
+      "TSTypeOperator",
+      "TSIndexedAccessType",
+      "TSMappedType",
+      "TSLiteralType",
+      "TSExpressionWithTypeArguments",
+      "TSInterfaceDeclaration",
+      "TSInterfaceBody",
+      "TSTypeAliasDeclaration",
+      "TSAsExpression",
+      "TSTypeAssertion",
+      "TSEnumDeclaration",
+      "TSEnumMember",
+      "TSModuleDeclaration",
+      "TSModuleBlock",
+      "TSImportType",
+      "TSImportEqualsDeclaration",
+      "TSExternalModuleReference",
+      "TSNonNullExpression",
+      "TSExportAssignment",
+      "TSNamespaceExportDeclaration",
+      "TSTypeAnnotation",
+      "TSTypeParameterInstantiation",
+      "TSTypeParameterDeclaration",
+      "TSTypeParameter",
+      "Expression",
+      "Binary",
+      "Scopable",
+      "BlockParent",
+      "Block",
+      "Statement",
+      "Terminatorless",
+      "CompletionStatement",
+      "Conditional",
+      "Loop",
+      "While",
+      "ExpressionWrapper",
+      "For",
+      "ForXStatement",
+      "Function",
+      "FunctionParent",
+      "Pureish",
+      "Declaration",
+      "PatternLike",
+      "LVal",
+      "TSEntityName",
+      "Literal",
+      "Immutable",
+      "UserWhitespacable",
+      "Method",
+      "ObjectMember",
+      "Property",
+      "UnaryLike",
+      "Pattern",
+      "Class",
+      "ModuleDeclaration",
+      "ExportDeclaration",
+      "ModuleSpecifier",
+      "Flow",
+      "FlowType",
+      "FlowBaseAnnotation",
+      "FlowDeclaration",
+      "FlowPredicate",
+      "JSX",
+      "Private",
+      "TSTypeElement",
+      "TSType",
+      "NumberLiteral",
+      "RegexLiteral",
+      "RestProperty",
+      "SpreadProperty",
+      "ReferencedIdentifier",
+      "ReferencedMemberExpression",
+      "BindingIdentifier",
+      "Scope",
+      "Referenced",
+      "BlockScoped",
+      "Var",
+      "User",
+      "Generated",
+      "Pure",
+      "ExistentialTypeParam",
+      "NumericLiteralTypeAnnotation",
+      "ForAwaitStatement"
+    ]
+  }
+}

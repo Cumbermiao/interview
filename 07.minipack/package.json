@@ -1,0 +1,16 @@
+{
+  "name": "07.minipack",
+  "version": "1.0.0",
+  "description": "> babylon 已经被转移到 @babel/parse 中。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/parser": "^7.6.0",
+    "@babel/preset-env": "^7.6.0"
+  }
+}
