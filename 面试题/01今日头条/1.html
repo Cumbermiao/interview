@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .wrap {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .inner {
+      font-size: 20px;
+      flex: 1;
+      background: lightblue;
+      height: 0;
+      padding: 25% 0;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="inner">A</div>
+  </div>
+</body>
+
+<script>
+  //TAG: 1. 实现居中和高度为宽度一半。 见上面html&css
+
+  //TAG: 2. 函数中的 arguments是数组吗?若不是,如何将它转化为真正的数组。
+  /**
+   * 不是数组， 只是带有迭代器 iterator 的对象。转成数组方法如下:
+   * 1. 使用 Array.from 将类似数组或可迭代对象
+   * 2. 使用 Array 的原型方法转成数组
+   */
+
+  function transform2Array1() {
+    return Array.from(arguments)
+  }
+  console.log(transform2Array1(1, '23', 3))
+
+  function transform2Array2() {
+    return Array.prototype.slice.call(arguments, 0)
+  }
+  console.log(transform2Array2(1, '23', 3))
+
+  //TAG: 3. 下列代码的输出。 考察隐式转换规则， 具体规则查看博客
+  if ([] == false) (console.log(1))
+  if ({} == false) (console.log(2))
+  if ([]) console.log(3)
+  if ([1] == [1]) console.log(4)
+
+  //TAG: 4. 下列代码的输出。 本题考察js的event loop ， 需要特别注意调用 await 后面的代码相当于在 then 中执行。
+  async function async1() {
+    console.log('async1 start');
+    await async2()
+    console.log("async1 end ")
+  }
+  async function async2() {
+    console.log("async2");
+  }
+  console.log('script start');
+  setTimeout(function () {
+    console.log('setTimeout');
+  }, 0)
+  async1();
+  new Promise(function (resolve) {
+    console.log('promise1')
+    resolve()
+  }).then(function () {
+    console.log('promise2')
+  })
+  console.log('script end')
+
+
+</script>
+
+</html>

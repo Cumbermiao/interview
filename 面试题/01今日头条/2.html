@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /**
+     * TAG: 7. 代码实现函数节流 throttle , 此处的节流函数与正常的还不一样，
+     * 为了保证最后的结果正确， 如果在函数执行时间段内多次触发了，在时间限制之后还会在执行最后一次触发的函数
+     * 节流： 在某段时间内， 函数多次被触发， 保证该时间段的只有第一次的函数在执行
+     * 防抖： 在某段时间内， 函数被触发多次， 前面的触发的函数被最后一次的覆盖
+     */
+    function throttle(fn, duration) {
+      var canRun = true;
+      var timer = null;
+      var lastFn = null;
+
+      const wrap = function(fn,args){
+        if(canRun){
+          canRun = false
+          fn.apply(this,args&&[...args])
+          timer = setTimeout(()=>{
+            canRun = true;
+            timer = null;
+            lastFn&&wrap(lastFn)
+            lastFn = null
+          },duration)
+        }else{
+          lastFn = fn.bind(this,...args)
+        }
+      }
+      return function () {
+        const args = arguments
+        wrap(fn,args)
+      }
+    }
+
+    var a = 0;
+    var fn = throttle(function(time){
+      a++;
+      console.log(`@${time}ms,a=${a}`)
+    },100)
+    fn(1)
+    fn(2)
+    fn(3)
+
+    setTimeout(()=>fn(4),120)
+    setTimeout(()=>fn(5),150)
+    setTimeout(()=>fn(6),160)
+
+    setTimeout(()=>fn(7),330)
+    setTimeout(()=>fn(8),360)
+    setTimeout(()=>fn(9),380)
+
+
+  /**
+   * TAG: 8.请用算法实现,从给定的无序、不重复的数组data中,取出n个数,使其相加和为sum。并给出
+   * 算法的时间倥空间复杂度。(不需要找到所有的解,找到一个解即可)
+   * 
+   * 题解如下： 时间复杂度 O(n^3> 空间复杂度： 1)
+   */
+
+   function  getResult(data,n,sum){
+     data.sort((a,b)=>a-b)
+
+     function backtracking(template,idx,count,restSum,data){
+      if(count==0&&restSum==0)return true
+      if(count<=0||restSum<=0||idx>=data.length)return 
+      if(count>0&&restSum>=0){
+        for(let i=idx;i<data.length;i++){
+          template.push(data[i])
+          if(backtracking(template,i+1,count-1,restSum-data[i],data))return template
+          template.pop();
+        }
+      }
+     }
+
+     let res =[];
+     if(backtracking(res,0,n,sum,data))return res
+   }
+
+   const res = getResult([1,2,3,4,5],3,12)
+   console.log(res)
+  </script>
+</body>
+
+</html>

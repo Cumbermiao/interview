@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    //TAG: 5. 以最小的改动解决以下代码的错误（可以使用 es6）  
+    /**
+     * const obj = {
+     *  name: ' jsCoder',
+     *  skill: ['es6', 'react', 'angular'],
+     *  say: function(){
+     *    for(var i=0,len = this.skill.length; i< len; i++){
+     *      setTimeout(function(){
+     *        console.log('No.'+i+this.name)
+     *        console.log(this.skill[i])
+     *        console.log('--------------')
+     *      },0)
+     *      console.log(i)
+     *    }
+     *  }
+     * }
+     * obj.say();
+     * 
+     * 
+     * 期望结果如下：
+     * 1
+     * 2
+     * 3
+     * No.1 jsCoder
+     * es6
+     * ----------
+     * No.2 jsCoder
+     * react
+     * ----------
+     * No.3 jsCoder
+     * angular
+     * ----------
+     */
+
+    const obj = {
+      name: ' jsCoder',
+      skill: ['es6', 'react', 'angular'],
+      say: function () {
+        for (let i = 0, len = this.skill.length; i < len; i++) {
+          setTimeout(() => {
+            console.log('No.' + i + this.name)
+            console.log(this.skill[i])
+            console.log('--------------')
+          }, 0)
+          console.log(i)
+        }
+      }
+    }
+    obj.say();
+
+
+    // TAG: 6. 实现 Function 原型的 bind 方法， 使得以下程序最后能输出 'success'
+
+    function Animal(name, color) {
+      this.name = name;
+      this.color = color;
+    }
+    Animal.prototype.say = function () {
+      return `I am a ${this.color} ${this.name}`
+    }
+    const Cat = Animal.bind(null, 'cat')
+    const cat = new Cat('white')
+    if (cat.say() === 'I am a white cat' && cat instanceof Cat && cat instanceof Animal) {
+      console.log('success')
+    }
+
+
+
+    Function.prototype.bind = function () {
+      if (typeof this != 'function') {
+        console.err('bind should be used in a function!')
+        return
+      }
+      const slice = Array.prototype.slice
+      const fn = this
+      const context = arguments[0]
+      const args = arguments.length > 1 ? slice.call(arguments, 1) : []
+      const wrap = function () {
+        if (fn.prototype.isPrototypeOf(this)) return fn.apply(this, [...args, ...arguments])
+        return fn.apply(context, [...args, ...arguments])
+      }
+      wrap.prototype = Object.create(fn.prototype)
+      wrap.prototype.constructor = wrap
+      return wrap
+    }
+
+  </script>
+</body>
+
+</html>
