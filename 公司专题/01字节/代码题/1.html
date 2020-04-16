@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>实现一个方法，参数是一个 generator 函数，执行结果是执行完所有 generator 中的 yield</p>
+  <p>
+    1. yield 函数， 返回函数中的结果
+    2. yield promise， 返回 promise 中的结果， 如果返回的 promise 中返回的仍是 promise， 递归至最后常量再进行下一次 yield
+    3. 异常处理
+    4. 兼容 promise 的异步
+  </p>
+  <code>
+
+  </code>
+</body>
+
+<script>
+  //测试用例
+  function* gen1() {
+    yield console.log(1);
+    yield console.log(2);
+    yield console.log(3);
+  }
+
+  function* gen2() {
+    var value1 = yield Promise.resolve('promise');  //直接返回promise
+    console.log(value1);
+
+    var value2 = yield () => Promise.resolve('thunk prommise')  //thunk里面返回promise
+    console.log(value2);
+
+    var value3 = yield "string type";
+    console.log(value3);
+
+    var value4 = yield () => "thunk string type"
+    console.log(value4);
+  }
+
+  function* gen3() {
+    try {
+      var value1 = yield new Promise((resolve, reject) => setTimeout(reject, 0, 'reject error'));
+    } catch (error) {
+      console.log(error);
+    }
+    var value2 = yield 3;
+    console.log(value2);
+  }
+
+
+  
+</script>
+
+
+
+
+<script>
+// 实现
+function runGenerator(genFn) {
+    let gen = genFn();
+    next(gen)
+
+    function next(gen) {
+      runNext();
+
+      function runNext(arg,isErr) {
+        let { value, done } = isErr ? gen.throw(arg) : gen.next(arg);
+        if(done)return 
+        if (typeof value === 'function') value = value();
+        let res = new Promise(resolve=>{
+          resolve(value)
+        })
+        res.then(runNext,err=>runNext(err,true))
+      }
+
+    }
+  }
+  runGenerator(gen1)
+  runGenerator(gen2)
+  runGenerator(gen3)
+</script>
+
+</html>

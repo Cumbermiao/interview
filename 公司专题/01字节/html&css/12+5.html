@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .triangle{
+    display: inline-block;
+    height: 10px;
+    border-bottom: 10px solid #000;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+  }
+  .sector{
+    display: inline-block;
+    height: 10px;
+    border-bottom: 10px solid #000;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+  }
+
+  .container{
+    margin-top: 100px;
+    border: 1px solid #000;
+    height: 100px;
+  }
+  .left,.right{
+    background-color: lightpink;
+    width: 100px;
+    height: 100%;
+  }
+  .left{
+    float: left;
+  }
+  .right{
+    float: right;
+  }
+  .mid{
+    background-color: lightseagreen;
+    margin-left: 100px;
+    margin-right: 100px;
+    height: 100%;
+  }
+  </style>
+</head>
+<body>
+  <!-- 12. css 画三角形 , 扇形-->
+  <div class="triangle"></div>
+  <div class="sector"></div>
+
+  <!-- 5. 左右固定，中间宽度自适应 -->
+  <div class="container">
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="mid"></div>
+  </div>
+</body>
+</html>

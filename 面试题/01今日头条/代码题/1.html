@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>实现一个方法，参数是一个 generator 函数，执行结果是执行完所有 generator 中的 yield</p>
+  <p>
+    1. yield 函数， 返回函数中的结果
+    2. yield promise， 返回 promise 中的结果， 如果返回的 promise 中返回的仍是 promise， 递归至最后常量再进行下一次 yield
+    3. 异常处理
+    4. 兼容 promise 的异步
+  </p>
+
+  <script>
+    function runGen(gen) {
+      const generator = gen();
+      next(generator)
+    }
+    function next(generator) {
+      processToConstant();
+
+      function processToConstant(arg, isError) {
+
+        const { value, done } = isError ? generator.throw(arg) : generator.next(arg);
+        let response;
+
+        if (done) return
+        if (typeof value === 'function') {
+          response = value()
+        } else {
+          response = value
+        }
+        //此处利用 Promise.resolve 不管 response 是常量还是 promise 甚至是带有延迟或者嵌套 promise 的promise 对象， 都可以在 then 中获得终值， reject 也可以处理
+        Promise.resolve(response).then(processToConstant, err => processToConstant(err, true))
+      }
+    }
+
+    function* gen1() {
+      yield console.log(1);
+      yield console.log(2);
+      yield console.log(3);
+    }
+
+    function* gen2() {
+      var value1 = yield Promise.resolve('promise');  //直接返回promise
+      console.log(value1);
+
+      var value2 = yield () => Promise.resolve('thunk prommise')  //thunk里面返回promise
+      console.log(value2);
+
+      var value3 = yield "string type";
+      console.log(value3);
+
+      var value4 = yield () => "thunk string type"
+      console.log(value4);
+    }
+
+    function* gen3() {
+      try {
+        var value1 = yield new Promise((resolve, reject) => setTimeout(reject, 0, 'reject error'));
+      } catch (error) {
+        console.log(error);
+      }
+      var value2 = yield 3;
+      console.log(value2);
+    }
+
+    runGen(gen1) // 1 2 3
+    runGen(gen2) // promise , thunk promise, string type, thunk string type 
+    runGen(gen3) //  error, 3
+
+    // var a = new Promise(resolve=>{
+    //   setTimeout(()=>resolve(
+    //     new Promise(resolve=>{
+    //       setTimeout(()=>resolve(222),1000)
+    //     })
+    //   ),2000)
+    // })
+    // Promise.resolve(a).then(res=>console.log(res))
+  </script>
+</body>
+
+</html>

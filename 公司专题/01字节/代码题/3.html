@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>跨域， jsonp 的实现（手写代码）</p>
+
+
+  <script>
+    // TODO: 考虑多个 jsonp 并发， $jsonCallback 会被覆盖， 需要生成唯一的回调
+    function jsonp(url, cb) {
+      var container = document.getElementsByTagName('head')[0];
+      var script = document.createElement('script');
+      window.$jsonCallback = function (res) {
+        cb(res);
+        delete window.$jsonCallback;
+        container.removeChild(script);
+      }
+      script.src = url + '?jsoncallback=$jsonCallback';
+      container.appendChild(script);
+    }
+
+  </script>
+</body>
+
+</html>

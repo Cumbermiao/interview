@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <button onclick="throttleClick(1,2,3)">throttle</button>
+  <button onclick="debounceClick(4,5,6)">debounce</button>
+  <script>
+    //TAG: throttle
+    function throttle(fn, duration) {
+      let canRun = true;
+      let _this = this;
+
+      return function () {
+        if (canRun) {
+          canRun = false
+          fn.apply(_this, arguments)
+          setTimeout(() => canRun = true, duration)
+        }
+      }
+    }
+
+
+    //TAG: debounce
+    function debounce(fn, delay) {
+      let timer;
+
+      return function () {
+        if (timer) {
+          clearTimeout(timer)
+        }
+        timer = setTimeout(() => {
+          clearTimeout(timer)
+          fn(arguments)
+        }, delay)
+      }
+    }
+
+    throttleClick = throttle(function(){
+      console.log('throttle',this.name)
+    }.bind({name:"jane"}),1000)
+
+    debounceClick = debounce(function(){
+      console.log('debounce',this.name)
+    }.bind({name:'james'}),1000)
+  </script>
+</body>
+
+</html>

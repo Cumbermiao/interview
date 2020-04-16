@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>
+    12. n级台阶，从0开始走起，一次可以走一步或者两步，那么走完n级台阶一共有多少种走法？
+  </p>
+</body>
+<script>
+  //1
+  function steps(n) {
+
+    function next(n) {
+      if (n > 0) {
+        if (n === 1) return 1
+        if (n === 2) return 2
+        return next(n - 1) + next(n - 2)
+      }
+    }
+    return next(n)
+
+  }
+
+  //2
+  function nSteps(n) {
+    if (n <= 3) {
+      return n;
+    }
+    return nSteps(n - 2) + nSteps(n - 1);
+  }
+  console.log(steps(1))
+  console.log(steps(2))
+  console.log(steps(3))
+  console.log(steps(4))
+  console.log(steps(5))
+  console.log(steps(6))
+
+  console.log(nSteps(1))
+  console.log(nSteps(2))
+  console.log(nSteps(3))
+  console.log(nSteps(4))
+  console.log(nSteps(5))
+  console.log(nSteps(6))
+
+  /**
+  * 1: [1]
+  * 2: [1,2]
+  * 3: [[1,1,1],[1,2],[2,1]]
+  * 4: [[1,1,1,1],[1,1,2],[1,2,1],[2,1,1],[2,2]]
+  */
+</script>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>实现 sum1(1)(2)(3)()，实现这么一个 sum 函数，返回 6</p>
+  <p>实现 sum2(1)(2)(3).valueOf()，实现这么一个 sum 函数，返回 6</p>
+
+  <script>
+    function curry1(fn) {
+      const argLength = fn.length;
+      let args = [];
+      return function recurse() {
+        if (arguments.length === 0) {
+          return fn.call(null, ...args)
+        } else {
+          args.push(...arguments);
+          return recurse
+        }
+      }
+    }
+
+    var sum1 = curry1(function () {
+      return [].reduce.call(arguments, (prev, cur) => prev + cur, 0)
+    })
+
+
+    function curry2(fn) {
+      const argLength = fn.length;
+      let args = [];
+      function recurse() {
+        args.push(...arguments);
+        return recurse
+      }
+      recurse.valueOf = function () {
+        return fn.call(null,...args)
+      }
+      return  recurse
+    }
+
+    var sum2 = curry2(function () {
+      return [].reduce.call(arguments, (prev, cur) => prev + cur, 0)
+    })
+
+    console.log(sum1(1)(2)(3)())
+    console.log(sum2(1)(2)(3).valueOf())
+  </script>
+</body>
+
+</html>

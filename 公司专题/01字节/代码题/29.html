@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <p> curry 函数实现</p>
+  <script>
+    // 1 简单版
+    function curry1(fn) {
+      return function recursive(...args) {
+        if (args.length >= fn.length) {
+          return fn.apply(null, args)
+        } else {
+          return function () {
+            return recursive(...args.concat(...arguments))
+          }
+        }
+      }
+    }
+
+
+    function add(x, y, z) {
+      return x + y + z
+    }
+    var a = curry1(add)(1)
+    console.log(a)
+    var b = a(2)
+    console.log(b)
+    var c = b(3)
+    console.log(c)
+
+  </script>
+
+  <script>
+    //考虑参数中带有占位符 _
+    const _ = { type: '@@/placeholder' }
+    const isPlaceholder = arg => Object.prototype.toString.call(arg) === '[object Object]' && arg === _;
+    const hasPlaceholder = function (args) {
+      return Array.prototype.some.call(args, item => isPlaceholder(item))
+    }
+    const paramsIsReady = (params, expectedLen) => {
+      // console.log(params.length >= expectedLen)
+      // console.log(hasPlaceholder(params))
+      return params.length >= expectedLen && !hasPlaceholder(params)
+    }
+    const insertParam = (params, insert) => {
+      if (!hasPlaceholder(params)) return params.concat(insert)
+      //TODO:
+      const res = params.slice(0)
+      let idx = 0, param = Array.isArray(insert) ? insert.shift() : insert
+      while (idx < res.length) {
+        if (!isPlaceholder(res[idx])) {
+          idx++
+          continue
+        }
+        res[idx] = param
+        param = Array.isArray(insert) ? insert.shift() : undefined
+        idx++
+      }
+      if (Array.isArray(insert) && insert.length) { res = res.concat(insert) }
+      return res
+    }
+    function curry2(fn) {
+      return function recursive(...args) {
+        if (paramsIsReady(args, fn.length)) {
+          return fn.apply(null, args)
+        } else {
+          return function(...restArgs){
+            let params = insertParam(args,restArgs)
+            console.log(params)
+            return recursive(...params)
+          }
+        }
+      }
+    }
+
+    const sum = (x, y, z) => x + y + z;
+    const cSum = curry2(sum);
+    const division = (a, b, c) => a / b / c;
+    const cDivision = curry2(division);
+
+
+    console.log(cSum(1, _, _, 5)(2, _)(_, 3)(4))  // => 7
+    console.log(cSum('a')(_)('b')('c', 'd'))        // 'abc'
+    console.log(cDivision(12, 2, 3))          // => 2              
+    console.log(cDivision(12, _, 3)(2))      // => 2          
+    console.log(cDivision(_, 2, 3)(12))      // => 2          
+    console.log(cDivision(12)(2)(3))          // => 2  
+  </script>
+
+
+</body>
+
+</html>

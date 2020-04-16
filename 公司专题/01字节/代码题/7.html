@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>日期转化为 2 小时前， 1分钟前等; 输入一个日期 返回几秒前 几天前或者几月前</p>
+
+  <script>
+    function calcPastDate(targetDate) {
+      const template = `{{year}}年{{month}}月{{day}}天{{hour}}小时{{minute}}分{{second}}秒{{avator}}`
+      const target = new Date(targetDate)
+      const now = new Date()
+      console.log(now)
+
+      const seconds = (now.getTime() - target.getTime()) / 1000 | 0;
+      const { year, month, day, hour, minute, second } = format(seconds)
+      const avator = seconds > 0 ? '前' : '后';
+
+      return template.replace('{{year}}', year)
+                     .replace('{{month}}', month)
+                     .replace('{{day}}',day)
+                     .replace('{{hour}}',hour)
+                     .replace('{{minute}}',minute)
+                     .replace('{{second}}',second)
+                     .replace('{{avator}}',avator)
+
+
+      function format(seconds) {
+        //NOTE: 每月以30为准
+        const second = seconds % 60;
+        const minute = (seconds / 60 | 0) % 60;
+        const hour = (seconds / 3600 | 0) % 24;
+        const day = (seconds / 86400 | 0) % 30;
+        const month = (seconds / 1036800 | 0) % 12;
+        const year = seconds / 1036800 | 0
+        return {
+          second,
+          minute,
+          hour,
+          day,
+          month,
+          year
+        }
+      }
+    }
+
+    console.log(calcPastDate(150000))
+    console.log(calcPastDate(1580568808206))
+  </script>
+</body>
+
+</html>

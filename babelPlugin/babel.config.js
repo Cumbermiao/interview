@@ -14,7 +14,7 @@ module.exports = {
 
   ],
   plugins: ["./util/babel-flow"],
-  exclude:"node_modules/*",
-  babelrcRoots:['./src',"node_modules/react/*","node_modules/react-dom/*"]
+  // exclude:"node_modules/*",
+  babelrcRoots:['./src',"node_modules/react/*","node_modules/react-dom/*"],
   // include:["node_modules/react/*","node_modules/react-dom/*"]
 }

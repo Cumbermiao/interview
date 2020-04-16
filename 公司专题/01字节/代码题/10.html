@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <p> 深拷贝与浅拷贝的区别， 深拷贝的实现，需要考虑循环引用</p>
+  <script>
+    /**
+     * TAG: 深拷贝与浅拷贝的区别:
+     * JS 的数据类型分为基础类型和引用类型， 浅拷贝在拷贝引用类型的值时， 拷贝的是其指针地址，
+     * 而深拷贝是对其引用类型的堆内存重新拷贝一份并引用。
+     */
+
+    /**
+     * TAG: 一个深拷贝所需要考虑的因素：
+     * 1. 引用类型（此处只考虑 object、array）
+     * 2. 循环引用
+     * 3. 拷贝函数 TODO:
+     * 4. 考虑 target 本身的原型链
+     */
+
+    const mapTag = '[object Map]';
+    const setTag = '[object Set]';
+    const arrayTag = '[object Array]';
+    const objectTag = '[object Object]';
+    const argsTag = '[object Arguments]';
+
+    const boolTag = '[object Boolean]';
+    const dateTag = '[object Date]';
+    const numberTag = '[object Number]';
+    const stringTag = '[object String]';
+    const symbolTag = '[object Symbol]';
+    const errorTag = '[object Error]';
+    const regexpTag = '[object RegExp]';
+    const funcTag = '[object Function]';
+
+    const iterateTag = [mapTag, setTag, arrayTag, objectTag, argsTag]
+
+    function isObject(target) {
+      if (target === null) return false
+      return typeof target === 'object'
+    }
+
+    function isFunc(target) {
+      return typeof target === 'function'
+    }
+
+    function initConstruct(target) {
+      const Construct = target.__proto__.constructor
+      return new Construct()
+    }
+
+    function deepClone(target, map = new WeakMap()) {
+      if (!isObject(target) && !isFunc(target)) {
+        return target
+      }
+
+      const type = Object.prototype.toString.call(target);
+      let initTarget = initConstruct(target);
+
+      if (map.get(target)) return map.get(target)
+      else map.set(target, initTarget)
+
+      if (iterateTag.indexOf(type) > -1) {
+        for (let key in target) {
+          initTarget[key] = deepClone(target[key],map)
+        }
+        return initTarget
+      }
+    }
+
+
+    // array
+    const target = {
+      field1: 1,
+      field2: undefined,
+      field3: {
+        child: 'child'
+      },
+      field4: [2, 4, 8]
+    };
+
+    //循环引用
+    const target1 = {
+      field1: 1,
+      field2: undefined,
+      field3: {
+        child: 'child',
+      },
+      field4: [2, 4, 8]
+    };
+    target1.target = target1;
+
+    //
+    const map = new Map();
+    map.set('key', 'value');
+    map.set('ConardLi', 'code秘密花园');
+
+    const set = new Set();
+    set.add('ConardLi');
+    set.add('code秘密花园');
+
+    const target2 = {
+      field1: 1,
+      field2: undefined,
+      field3: {
+        child: 'child'
+      },
+      field4: [2, 4, 8],
+      empty: null,
+      map,
+      set,
+      bool: new Boolean(true),
+      num: new Number(2),
+      str: new String(2),
+      // symbol: Object(Symbol(1)),
+      // date: new Date(),
+      // reg: /\d+/,
+      // error: new Error(),
+      // func1: () => {
+      //   console.log('code秘密花园');
+      // },
+      // func2: function (a, b) {
+      //   return a + b;
+      // }
+    };
+
+    // console.log(deepClone(target))
+    console.log(deepClone(target1))
+    // console.log(deepClone(target2))
+
+
+  </script>
+</body>
+
+</html>

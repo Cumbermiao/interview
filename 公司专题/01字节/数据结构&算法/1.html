@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <p>
+
+  </p>
+</body>
+<script>
+  function List(x){
+      this.val = x;
+      this.next = null;
+  }
+
+  function FindFirstCommonNode(pHead1, pHead2) {
+    if (pHead1 === pHead2) return pHead1
+    let len1 = 1;
+    let node = pHead1;
+    while (node.next) {
+      len1++;
+      node = node.next;
+    }
+
+    let len2 = 1;
+    node = pHead2;
+    while (node.next) {
+      len2++;
+      node = node.next;
+    }
+
+    let startNode1 = pHead1;
+    let startNode2 = pHead2;
+    let count = len1 - len2;
+    if (count > 0) {
+      while (count > 0) {
+        startNode1 = startNode1.next
+        count--
+      }
+    } else {
+      while (count < 0) {
+        startNode2 = startNode2.next
+        count++
+      }
+    }
+    while (startNode1 && startNode2) {
+      if (startNode1 === startNode2) return startNode1
+      else {
+        startNode1 = startNode1.next
+        startNode2 = startNode2.next
+      }
+
+    }
+  }
+
+
+  var list1 = new List(1);
+  var list2 = new List(2);
+  var list3 = new List(3);
+  var list4 = new List(4);
+  var list5 = new List(5);
+  var list6 = new List(6);
+
+  var cp1 = new List('c1')
+  var cp2 = new List('c2')
+  var cp3 = new List('c3')
+
+
+  list1.next = list2;
+  list2.next = list3;
+  list3.next = list4;
+  list4.next = list5;
+  list5.next = list6;
+
+  cp1.next = cp2;
+  cp2.next = cp3;
+  cp3.next = list4;
+
+  /**
+  * 1   2   3   4   5   6
+  * c1  c2  c3
+  */
+
+  console.log(FindFirstCommonNode(cp1,list1))
+  console.log(FindFirstCommonNode(cp2,list1))
+  console.log(FindFirstCommonNode(cp1,list3))
+  console.log(FindFirstCommonNode(list4,list4))
+
+</script>
+
+</html>

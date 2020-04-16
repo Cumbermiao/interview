@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>
+    设计一个简单的任务队列，要求分别在1,3,4秒后打印出”1“，”2“，”3“
+
+    new Queue()
+    .task(1000, () => {
+    console.log(1)
+    })
+    .task(2000, () => {
+    console.log(2)
+    })
+    .task(1000, () => {
+    console.log(3)
+    })
+    .start()
+
+    function Quene() { ... }
+  </p>
+
+  <script>
+    function Queue() {
+      this.queue = []
+    }
+    Queue.prototype.task = function (delay, cb) {
+      this.queue.push(
+        function () {
+          return new Promise((resolve)=>{
+            setTimeout(() => { 
+              cb()
+              resolve()
+            }, delay)
+          })
+        }
+      )
+      return this
+    }
+    Queue.prototype.start = function () {
+      let task = this.queue.shift()
+      if (task) {
+        task().then(() => {
+          this.start()
+        })
+      }
+    }
+  </script>
+</body>
+
+</html>

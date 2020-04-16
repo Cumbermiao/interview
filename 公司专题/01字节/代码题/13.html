@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <p>代码实现连续点击 3 次每次间隔不超过 1 秒然后弹出页面 （类似安卓的关于手机彩蛋）</p>
+
+  <button onclick="test()">click</button>
+
+  <script>
+  function generate(fn,count){
+    let activedCount = 0;
+    let timer = null;
+    let _this = this;
+    return function(){
+      activedCount ++;
+      if(activedCount === count){
+        fn.apply(_this,arguments)
+      }
+      if(timer){
+        clearTimeout(timer)
+      }
+      timer = setTimeout(()=>{
+        activedCount = 0;
+      },1000)
+    }
+  }
+
+  var test = generate(function(){
+    alert('superise mother fucker')
+  },3)
+
+  </script>
+</body>
+</html>

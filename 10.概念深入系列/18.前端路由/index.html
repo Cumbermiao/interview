@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <button onclick="pushHistory(event)">index</button>
+    <button onclick="pushHistory(event)">1.html</button onclick="pushHistory">
+    <button onclick="pushHistory(event)">2.html</button onclick="pushHistory">
+    <button onclick="pushHistory(event)">3.html</button onclick="pushHistory">
+    <button onclick="pushHistory(event)">4.html</button onclick="pushHistory">
+    <button onclick="back()">back</button>
+    <button onclick="forward()">forward</button>
+</body>
+<script>
+    function pushHistory(e){
+      var text = e.target.innerText;
+      window.history.pushState({text},'')
+      // var p = document.createElement('p');
+      // p.innerText = text;
+      // document.body.appendChild(p)
+    }
+    function back(){
+      window.history.back()
+    }
+
+    function forward(){
+      window.history.forward()
+    }
+
+    window.addEventListener('DOMContentLoaded',function(){
+     
+    })
+    window.addEventListener('popstate',function(e){
+        console.log('popstate',e)
+      })
+
+    
+</script>
+</html>

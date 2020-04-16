@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>koa 中间件机制及代码实现</p>
+
+  <script>
+    /**
+     * koa 的中间件机制使用的是洋葱模型, 参考文章 https://juejin.im/post/5c7decbbe51d454a7c5e8474
+     */
+
+    function compose(...fns) {
+      return function (context, next) {
+        let idx = -1;
+        return dispatch(0)
+
+        function dispatch(i) {
+          if (i <= idx) throw new Error('repeat running')
+          idx = i
+          let fn = fns[idx]
+          if (idx === fns.length)fn=next
+          console.log(fn)
+          if(fn){
+            try{
+              return Promise.resolve(fn(context,dispatch.bind(null,idx+1)))
+            }catch(err){
+              return Promise.reject(err)
+            }
+          }else{
+            return Promise.resolve()
+          }
+      }
+      }
+
+    }
+
+    class Koa {
+      constructor() {
+        this.context = { app: 'koa' }
+        this.middlewares = []
+      }
+      use(...fn) {
+        this.middlewares.push(...fn)
+        this.middleFn = compose(...this.middlewares)
+      }
+
+      on(url, cb) {
+        this.middleFn(this.context,cb)
+      }
+    }
+
+    let app = new Koa();
+    console.dir(app)
+
+    let hi = (ctx,next)=> {
+      console.log("hi")
+      next && next()
+      console.log('hi end')
+    }
+    let bye = (ctx,next)=> {
+      console.log("bye")
+      next && next()
+      console.log('bye end')
+
+    }
+
+    app.use(hi, bye)
+
+    app.on('/test', () => { console.log('listening test') })
+
+
+  </script>
+</body>
+
+</html>

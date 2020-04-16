@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,36 +11,62 @@
 
 <body>
   <button onclick="send()">send jsonp</button>
+  <button onclick="send2()">send2 jsonp</button>
 </body>
 <script>
-function createJsonp(url,callback){
-  var script = document.createElement('script');
-  script.src = url;
-  script.onload = script.onreadystatechange = function(e){
-    callback()
-  }
-  document.body.append(script)
-  
-}
-
-function foo(data){
-  console.log('data',data)
-  return data
-}
-
-function send(){
-  // createJsonp('http://localhost:3000/getData?callback=foo',function(res){
-  //   console.log('res',res)
-  // })
-  $.ajax({
-    dataType:'jsonp',
-    jsonp: 'jsoncallback',
-    url:'http://localhost:3000/getData',
-    success:function(res){
-      debugger;
-      console.log(res)
+  //有问题
+  function createJsonp(url, callback) {
+    var script = document.createElement('script');
+    script.src = url;
+    script.onload = script.onreadystatechange = function (e) {
+      callback()
     }
-  })
-}
+    document.body.append(script)
+
+  }
+
+  // jsonp 实现无问题
+  function jsonp(url, cb) {
+    var container = document.getElementsByTagName('head')[0];
+    var script = document.createElement('script');
+    window.$jsonCallback = function (res) {
+      cb(res);
+      delete window.$jsonCallback;
+      container.removeChild(script);
+    }
+    script.src = url + '?jsoncallback=$jsonCallback';
+    container.appendChild(script);
+  }
+
+  function foo(data) {
+    console.log('data', data)
+    return data
+  }
+
+  function send() {
+    //1
+    createJsonp('http://localhost:3000/getData?callback=foo', function (res) {
+      console.log('res', res)
+    })
+
+    //2
+    // $.ajax({
+    //   dataType:'jsonp',
+    //   jsonp: 'jsoncallback',
+    //   url:'http://localhost:3000/getData',
+    //   success:function(res){
+    //     debugger;
+    //     console.log(res)
+    //   }
+    // })
+  }
+
+  function send2(){
+    jsonp('http://localhost:3000/getData',res=>{
+      console.log('jsonp res',res)
+    })
+  }
+
 </script>
+
 </html>

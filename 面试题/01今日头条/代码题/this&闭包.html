@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //TAG: 1. this + 闭包
+    var num = 10;
+    var obj = {
+      num: 11,
+      fn: (function (num) {
+        this.num *= 2;
+        num += 10;
+        var num = 10;
+        return function () {
+          this.num *= 2
+          num += 12
+          console.log(num, this)
+        }
+      })(num)
+    }
+    var f = obj.fn
+    f()//
+    obj.fn()//
+    console.log(num, obj.num)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>数字千分位(正则与非正则)</p>
+
+  <script>
+    /**
+     * TAG: 正则参考文章 https://juejin.im/post/5b026bbb5188256720345bb4
+     * 使用正则解决需要了解以下几个知识点：
+     *  \b 与 \B ， \B 匹配的是非单词的边界
+     * (?=X) 正先行断言， 只有当=里面的X表达式成立，才会匹配左侧字符串
+     * (?!X) 负先行断言， 只有当 X 表达式不成立时， 才会匹配左侧字符串
+     */
+    var regx = /\B(?=(\d{3})+(?!\d))/g
+
+    /**
+     * TAG: 
+     */
+
+    function numberDivision(number, tag = ',') {
+      if (number === undefined) throw new TypeError('number is required')
+      const type = typeof number;
+      try {
+        number = Number(number)
+      } catch (err) {
+        throw new TypeError(err)
+      }
+      if(Number.isNaN(number)){
+        throw new TypeError('invalid number format')
+      }
+
+      number = String(number)
+      const[inters,digits] = number.split('.')
+      return division(inters)+'.'+division(digits)
+
+      function division(str){
+        const strArr = []
+        for(let len = str.length,j=0,i=len-1;i>=0;i--,j++){
+          strArr.unshift(str[i])
+          if(j%3===2&&i!=0){
+            strArr.unshift(tag)
+          }
+        }
+        return strArr.reduce((str,item)=>str+item)
+      }
+
+
+    }
+
+    console.log(numberDivision(1234567891.1234567891))
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <p>设计一套机制，两个千位大数相乘</p>
+  <script>
+  //TAG: 1. 按照常规的乘法计算思路， 用乘数的每位与被乘数相乘并相加。其时间复杂度为 O(n^2)
+
+  /**
+   * TAG: 2. 使用分治的方法， X * Y 将 X 和 Y 分成 (10^(n/2)*A+B)*(10^(n/2)*C+D)
+   * 最终计算公式为： AC*10^n + A*D*10^(n/2) + B*C*10^(n/2) + B*D
+   * 以上公式可以转换为：  AC*10^n + [(A-C)(D-B)+AB+CD]*10^(n/2) + B*D
+   * 时间复杂度为： O(n^log2(3) ) 【使用 master 定理】
+   */
+
+
+  </script>
+</body>
+</html>

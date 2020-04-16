@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .row {
+      background-color: lightcyan;
+    }
+
+    .row::before,
+    .row::after {
+      display: table;
+      content: "";
+    }
+
+    .col {
+      background-color: lightblue;
+      position: relative;
+      float: left;
+      border-radius: 4px;
+      box-sizing: border-box;
+      padding: 0 15px;
+    }
+
+    .col-1 {
+      width: 16.6667%;
+    }
+
+    .col-2 {
+      width: 33.3333%;
+    }
+
+    .col-3 {
+      width: 50%;
+    }
+
+    .col-push-1 {
+      left: 16.6667%;
+    }
+
+    .col-pull-1 {
+      right: 16.6667%;
+    }
+
+    html,body{
+      height: 100%;
+    }
+    .container{
+      height: auto;
+      min-height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="row">
+        <div class="col col-1">1</div>
+        <div class="col col-2">2</div>
+        <div class="col col-3">3</div>
+      </div>
+      <div class="row">
+        <div class="col col-1 col-push-1">1</div>
+        <div class="col col-1 col-pull-1">2</div>
+      </div>
+    </div>
+    <div class="footer">
+      footer
+    </div>
+  </div>
+
+  <script>
+    // TAG: 1. css 栅格布局, 参考以上实现。
+
+    /**
+     * TAG: 2. CSS 伪类和伪元素
+     * CSS 伪类： link visited hover active focus 
+     * CSS 伪元素： before after first–letter 选取元素的首个字符  first–line 选取元素的第一行 selection
+     */
+
+
+    /**
+     * TAG: 3. 根据条件获取递归树中过的某一节点
+     * TODO:
+     */
+
+    /**
+     * TAG: 4. JavaScript this 的指向；箭头函数的 this 指向
+     *
+     * this：js中的关键字，只存在于函数，指的是当前方法的调用者。
+     *
+     * 自执行函数指向 window ； 方法名前是否有调用，有则指向调用者； 在箭头函数中，this指向的是当前对象的父级作用域，且使用 apply 等都无法改变指向；
+     */
+    var obj1 = {
+      id: "awesome",
+      cool: function coolFn() {
+        setTimeout(function () {
+          console.log(this.id);
+        }, 1000)
+      }
+    };
+
+    var obj2 = {
+      id: "awesome",
+      cool: function coolFn() {
+        setTimeout(() => {
+          console.log(this.id);
+        }, 1000)
+      }
+    };
+    obj1.cool()
+    obj2.cool()
+
+
+    /**
+     * TAG: 5. Promise / setTimeout 的执行顺序；实际考察知识点：对「事件队列 / 宏任务 / 微任务」的了解
+     *
+     * 浏览器中有一个执行栈（call stack） 来记录当前的函数执行， 当执行栈被清空之后就回去 任务队列（task queue） 中
+     * 查找是否有注册回调。
+     * 任务队列中的任务分为 微任务和宏任务， 微任务如： Promise.then、requestAnimation、MutationObserver 等注册的回调
+     * 都属于微任务， 宏任务： setTimeout、setInterval、其他的同步代码都属于宏任务。 
+     * 使用浏览器 frame 的执行过程来解释：
+     * input event callbacks --> requestAnimationFrame --> [html/css parser, css caculate] --> [layout, update layer, ...] --> requestIdelCallback
+     * 
+     * 首先执行js代码， 清空调用栈，  遇到 setTimeout 等代码会注册宏任务， 遇到 Promise.then 等注册微任务。 
+     * 到下一帧， 去 task queue 中查找任务， 对于微任务会全部清空， 清空之后执行一个宏任务， 执行宏任务后会再去 task queue 查找微任务， 如此反复循环。
+     * 
+     */
+
+    //多个宏任务 ， 第一个宏任务中注册了微任务， 后面的宏任务执行会在微任务之后执行。
+
+    function a() {
+      setTimeout(b, 0)
+      setTimeout(() => {
+        console.log('setTimeout')
+      })
+      new Promise(resolve=>resolve()).then(() => {
+        console.log('promise1')
+      })
+      console.log('a')
+
+
+    }
+    function b() {
+      console.log('b')
+      new Promise(resolve=>resolve()).then(() => {
+        console.log('promise2')
+      })
+      requestAnimationFrame(() => {
+        console.log('animation')
+      })
+    }
+
+    /**
+     * TAG: 6. 协商缓存
+     * 
+     * 考察浏览器缓存策略
+     */
+
+     //缓存策略 https://juejin.im/post/5c4528a6f265da611a4822cc#heading-10
+  </script>
+</body>
+
+</html>

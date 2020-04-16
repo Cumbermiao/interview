@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>
+    请实现如下的函数,可以批量请求数据,所有的URL地址在urls参数中,同时可以通
+    过max参数控制请求的并发度,当所有请求结束之后,需要执行 callback回掉函数。
+    发请求的函数可以直接使用 fetch即可
+    function sendRequest(urls: string[], max: number, callback: ()=> void){
+
+    }
+  </p>
+
+  <script>
+    function sendRequest(urls = [], max = 1, callback = () => void 0) {
+      const done = new Array(urls.length);
+      let doneCount = 0;
+      const cpUrls = urls.slice(0);
+      let sendingCount = 0;
+      request()
+
+
+      function request() {
+        while (cpUrls.length && sendingCount < max) {
+          sendingCount++;
+          let idx = urls.length-cpUrls.length
+          let url = cpUrls.shift(0)
+          mockFetch(url).then(res => {
+            console.log(`idx: ${idx} ;done ${url}; res:${res}`)
+            done[idx]=res
+            sendingCount--;
+            doneCount ++;
+            request()
+            if (doneCount === urls.length) {
+              console.log(done,callback)
+              callback && callback(done)
+            }
+          })
+
+        }
+      }
+    }
+
+
+    function mockFetch(url) {
+      return new Promise((resolve, reject) => {
+        const delay = parseInt(Math.random() * 5000)
+        console.log(`fetching ${url}，will done in ${delay}s`)
+        setTimeout(() => resolve(url), delay)
+      })
+    }
+
+    // sendRequest(['/name', '/age', '/sex', '/weight', '/5555', '/6666', '/7777'], 4,done=>console.log(done))
+  </script>
+
+  <script>
+  function generateMaxFetch(max=4){
+    let urls = []
+    function parcelFetch(){
+      if(urls.length&&max>0){
+        let url = urls.shift()
+        max--;
+        mockFetch(url).then(res=>{
+          console.log(res)
+          max++;
+          parcelFetch()
+        })
+        .catch(err=>{
+          throw new Error(err)
+        })
+      }
+    }
+    return function(url){
+      urls.push(url)
+      parcelFetch()
+    }
+  }
+  const maxFetch = generateMaxFetch(3)
+  maxFetch('/111')
+  maxFetch('/222')
+  maxFetch('/333')
+  maxFetch('/444')
+  maxFetch('/555')
+  maxFetch('/666')
+  maxFetch('/777')
+  </script>
+</body>
+
+</html>

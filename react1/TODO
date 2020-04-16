@@ -1,0 +1,6 @@
+- [x] addEventPoolingTo 为甚执行三次: SyntheticEvent.extend
+
+- [] 在 render 阶段重新构建 workInProgress ?
+- [] setState 是更新 fiber tree ?  
+- [] render 阶段是如何检测 this.state.value = xxx 形式的改动的?
+- [] effect list 的链表的顺序?

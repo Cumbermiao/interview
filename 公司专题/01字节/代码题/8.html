@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>
+    8. throttle debounce 实现
+  </p>
+
+  <button onclick="throttleClick(1,2,3)">throttle</button>
+  <button onclick="debounceClick(4,5,6)">debounce</button>
+
+</body>
+
+
+
+<script>
+  function throttle(fn,duration){
+    let timer, lastFn, dispatching = false;
+    
+    return function response(){
+      const args = [...arguments];
+      if(dispatching){
+        lastFn = function(...args){response(...arguments)}
+      }else{
+        dispatching = true
+        fn(...args)
+        timer = setTimeout(function(){
+          dispatching = false
+          clearTimeout(timer)
+          if(lastFn){
+            lastFn()
+          }
+          lastFn = null;
+        },duration)
+      }
+    }
+  }
+
+
+  function debounce(fn,delay){
+    let timer;
+    return function(){
+      if(timer){
+        clearTimeout(timer)
+      }
+      timer = setTimeout(function(){
+        fn();
+        clearTimeout(timer)
+      },delay)
+    }
+  }
+</script>
+<script>
+  //测试
+  var count = 0;
+  throttleClick = throttle(function () {
+    count++
+  }.bind({ name: "jane" }), 1000)
+
+  debounceClick = debounce(function () {
+    console.log('debounce', this.name)
+  }.bind({ name: 'james' }), 1000)
+</script>
+</html>

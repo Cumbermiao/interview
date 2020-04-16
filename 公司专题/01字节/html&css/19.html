@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .container{
+    height: 100px;
+    border: 1px solid #000;
+  }
+  .left{
+    float: left;
+    width: 100px;
+    height: 100px;
+  }
+  .right{
+    float: right;
+    width: 100px;
+    height: 100px;
+  }
+  .mid{
+    overflow: hidden;
+    background-color: lightcyan;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 1. bfc, 左右两个浮动， mid 通过 overflow: hidden， 生成 bfc 与左右隔离 -->
+    <div class="left">left</div>
+    <div class="right">right</div>
+    <div class="mid">mid</div>
+  </div>
+
+  <!-- 2. 与上面类似， mid 通过 margin 去除左右两边的间距 -->
+</body>
+</html>
