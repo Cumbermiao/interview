@@ -49,9 +49,9 @@ const root3 = {
   ],
 };
 
-console.log(bfs(root1, "c"));
-console.log(bfs(root2, "c"));
-console.log(bfs(root3, "d"));
+// console.log(bfs(root1, "c"));
+// console.log(bfs(root2, "c"));
+// console.log(bfs(root3, "d"));
 
 // 39
 
@@ -148,3 +148,64 @@ function cacheRequest(url, cb) {
 // setTimeout(() => {
 //   cacheRequest("/456", (data) => console.log(data));
 // }, 1000);
+
+// 89
+function lottery(whiteList,  participant, count=20000) {
+  const res = []
+  whiteList.sort((a,b)=>a-b)
+  participant.sort((a,b)=>a-b)
+
+  const pickRandom = ()=>{
+    const idx = parseInt(Math.random() * participant.length)
+    res.push(participant.splice(idx, 1)[0])
+  }
+
+  let i1 = 0
+  let i2 = 0
+  while(res.length<count){
+    if(i1<whiteList.length && i2<participant.length){
+      if(whiteList[i1] === participant[i2]){
+        let [ele] = participant.splice(i2,1)
+        res.push(ele)
+        i1++
+      }else if(whiteList[i1] > participant[i2]){
+        i2++
+      }else {
+        i1++
+      }
+    }else{
+      pickRandom()
+    }
+  }
+
+  return res
+}
+
+const w1 = [1,2,3,4,5,6,7,8,11]
+const p1 = [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31]
+console.log(lottery(w1, p1, 10))
+
+const random = (min=0, max=200)=>parseInt(Math.random()*max + min)
+
+const w2 = []
+for(let i=0;i<20;i++){
+  if(i<10){
+    w2.push(random(0,50))
+  }else{
+    w2.push(random(50, 100))
+  }
+  
+}
+
+// const p2 = []
+// for(let i=0;i<60;i++){
+//   if(i<30){
+//     p2.push(random(0,150))
+//   }else{
+//     p2.push(random(200, 1000))
+//   }
+// }
+
+// console.log(w2.sort((a,b)=>a-b))
+// console.log(p2.slice(0).sort((a,b)=>a-b))
+// console.log(lottery(w2, p2, 20))

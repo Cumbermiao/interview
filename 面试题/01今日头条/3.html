@@ -63,7 +63,6 @@
 
 
     // TAG: 6. 实现 Function 原型的 bind 方法， 使得以下程序最后能输出 'success'
-
     function Animal(name, color) {
       this.name = name;
       this.color = color;
@@ -76,7 +75,6 @@
     if (cat.say() === 'I am a white cat' && cat instanceof Cat && cat instanceof Animal) {
       console.log('success')
     }
-
 
 
     Function.prototype.bind = function () {
@@ -92,8 +90,10 @@
         if (fn.prototype.isPrototypeOf(this)) return fn.apply(this, [...args, ...arguments])
         return fn.apply(context, [...args, ...arguments])
       }
-      wrap.prototype = Object.create(fn.prototype)
-      wrap.prototype.constructor = wrap
+      if (fn.prototype) {
+        wrap.prototype = Object.create(fn.prototype)
+        wrap.prototype.constructor = wrap
+      }
       return wrap
     }
 

@@ -10,7 +10,62 @@
   <p>写一个 eventBus</p>
   <p>event 类的 ononce 方法</p>
   <script>
-  
+    class Bus{
+      constructor() {
+        this._pool = {}
+      }
+
+      on(evtName, cb){
+        if(this._pool[evtName]) this._pool[evtName].push(cb)
+        else this._pool[evtName] = [cb]
+      }
+
+      off(evtName, cb){
+        const queue = this._pool[evtName]
+        const idx = queue.indexOf(cb)
+        if(idx>-1) queue.splice(idx, 1)
+      }
+
+      once(evtName, cb){
+        const _this = this
+        const wrap = cb => {
+          return function c(...arg){
+            cb(...arg)
+            _this.off(evtName, c)
+          }
+        }
+        this.on(evtName, wrap(cb))
+      }
+
+      emit(evtName){
+        const queue = this._pool[evtName]
+        if(queue.length){
+          queue.forEach(cb=> cb())
+        }
+      }
+    }
+
+    const bus = new Bus()
+
+    let a = 0
+    let b = 0
+    const fire1 = ()=>{
+      a++
+      console.log('fire1', a)
+    }
+    const fire2 = ()=> {
+      b++
+      console.log('fire2',b)
+    }
+    bus.on('fire1', fire1)
+    bus.once('fire2', fire2)
+    bus.emit('fire1')
+    bus.emit('fire1')
+    bus.off('fire1', fire1)
+    bus.emit('fire1')
+    bus.emit('fire2')
+    bus.emit('fire2')
+    bus.emit('fire2')
   </script>
 </body>
 </html>

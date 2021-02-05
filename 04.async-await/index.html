@@ -1,35 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
+
 <body>
-  
+
 </body>
 <script>
-function func(item){
-  console.log(item);
-}
+  function func(item) {
+    console.log(item);
+  }
 
-//Uncaught SyntaxError: await is only valid in async function
-// async function processArray(arr){
-//   arr.forEach(item => {
-//     await func(item)
-//   });
-// }
+  //Uncaught SyntaxError: await is only valid in async function
+  // async function processArray(arr){
+  //   arr.forEach(item => {
+  //     await func(item)
+  //   });
+  // }
 
-async function processArray(arr){
-  arr.forEach(async item => {
-    console.log('before await')
-    await func(item)
+  async function processArray(arr) {
+    arr.forEach(async item => {
+      console.log('before await')
+      await func(item)
+    });
+  }
+
+
+  processArray([1, 2, 3, 4])
+
+
+  // promise async await event loop 经典面试题
+  async function async1() {
+    console.log('async1 start');
+    await async2();
+    console.log('async1 end');
+  }
+  async function async2() {
+    console.log('async2');
+  }
+  console.log('script start');
+  setTimeout(function () {
+    console.log('setTimeout');
+  }, 0);
+  async1().then(function () { console.log('async1 then') })
+  new Promise(function (resolve) {
+    console.log('promise1');
+    resolve()
+  }).then(function () {
+    console.log('promise2');
   });
-}
-
-
-processArray([1,2,3,4])
+  console.log('script end');
 
 </script>
+
 </html>

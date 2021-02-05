@@ -74,7 +74,11 @@
   setTimeout(function () {
     console.log('setTimeout');
   }, 0)
-  async1();
+  async1().then(
+    function () {
+      console.log('async1 then')
+    }
+  );
   new Promise(function (resolve) {
     console.log('promise1')
     resolve()
@@ -82,7 +86,6 @@
     console.log('promise2')
   })
   console.log('script end')
-
 
 </script>
 

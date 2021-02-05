@@ -30,16 +30,16 @@
       function request() {
         while (cpUrls.length && sendingCount < max) {
           sendingCount++;
-          let idx = urls.length-cpUrls.length
+          let idx = urls.length - cpUrls.length
           let url = cpUrls.shift(0)
           mockFetch(url).then(res => {
             console.log(`idx: ${idx} ;done ${url}; res:${res}`)
-            done[idx]=res
+            done[idx] = res
             sendingCount--;
-            doneCount ++;
+            doneCount++;
             request()
             if (doneCount === urls.length) {
-              console.log(done,callback)
+              // console.log(done, callback)
               callback && callback(done)
             }
           })
@@ -57,39 +57,67 @@
       })
     }
 
-    // sendRequest(['/name', '/age', '/sex', '/weight', '/5555', '/6666', '/7777'], 4,done=>console.log(done))
+
+    // function sendRequest2(urls, max, callback) {
+    //   let parallel = 0
+    //   const results = new Array(urls.length)
+    //   let done = 0
+    //   let idx = -1
+    //   request()
+
+    //   function request() {
+    //     while (parallel < max && idx < urls.length-1) {
+    //       parallel++;
+    //       idx++;
+    //       let i = idx
+    //       mockFetch(urls[i]).then(res => {
+    //         console.log(`idx: ${i} ;done ${urls[i]}; res:${res}`)
+    //         results[i] = res
+    //         parallel--
+    //         done++
+    //         if (done === urls.length) callback(results)
+    //         else request()
+    //       })
+    //     }
+    //   }
+
+    // }
+
+    // sendRequest(['/name', '/age', '/sex', '/weight', '/5555', '/6666', '/7777'], 4, done => console.log(done))
   </script>
 
   <script>
-  function generateMaxFetch(max=4){
-    let urls = []
-    function parcelFetch(){
-      if(urls.length&&max>0){
-        let url = urls.shift()
-        max--;
-        mockFetch(url).then(res=>{
-          console.log(res)
-          max++;
-          parcelFetch()
-        })
-        .catch(err=>{
-          throw new Error(err)
-        })
+    function generateMaxFetch(max = 4) {
+      let urls = []
+      function parcelFetch() {
+        if (urls.length && max > 0) {
+          let url = urls.shift()
+          max--;
+          mockFetch(url).then(res => {
+            console.log(res)
+            max++;
+            parcelFetch()
+          })
+            .catch(err => {
+              throw new Error(err)
+            })
+        }
+      }
+      return function (url) {
+        urls.push(url)
+        parcelFetch()
       }
     }
-    return function(url){
-      urls.push(url)
-      parcelFetch()
-    }
-  }
-  const maxFetch = generateMaxFetch(3)
-  maxFetch('/111')
-  maxFetch('/222')
-  maxFetch('/333')
-  maxFetch('/444')
-  maxFetch('/555')
-  maxFetch('/666')
-  maxFetch('/777')
+
+
+    const maxFetch = generateMaxFetch(3)
+    maxFetch('/111')
+    maxFetch('/222')
+    maxFetch('/333')
+    maxFetch('/444')
+    maxFetch('/555')
+    maxFetch('/666')
+    maxFetch('/777')
   </script>
 </body>
 
