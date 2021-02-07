@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"><input type="text" id="input" v-model="text">{{text}}<h2> {{text}}</h2></div>
+</body>
+<script>
+  const input = document.getElementById("input")
+  class Watcher {
+    constructor(vm, ele, key, type) {
+      Dep.target = this;
+
+      this.vm = vm;
+      this.ele = ele;
+      this.key = key;
+      this.type = type;
+
+      this.update();
+      Dep.target = null;
+    }
+
+    get() {
+      return this.vm[this.key]
+    }
+
+    update() {
+      this.ele[this.type] = this.get()
+    }
+  }
+
+  class Dep {
+    constructor() {
+      this._deps = []
+    }
+    addSub(watcher) {
+      Watcher.prototype.isPrototypeOf(watcher) && this._deps.push(watcher)
+    }
+    notify() {
+      this._deps.forEach(watcher => watcher.update())
+    }
+  }
+
+  function defineReactive(vm, key, value) {
+
+    Object.defineProperty(vm, key, {
+      get: function () {
+        if (Dep.target) vm.dep.addSub(Dep.target)
+        return value
+      },
+      set: function (newV) {
+        if (newV === value) return
+        value = newV
+        vm.dep.notify()
+      }
+    })
+  }
+
+  function observe(data, vm) {
+    const keys = Object.keys(data)
+    !vm.dep && (vm.dep = new Dep())
+    keys.forEach(key => defineReactive(vm, key, data[key]))
+  }
+
+  function compile(node, vm) {
+    if (node) {
+      const fragment = document.createDocumentFragment()
+      let child
+      while (child = node.firstChild) {
+        console.dir(child)
+        compileElement(child, vm)
+        fragment.append(child)
+      }
+      return fragment
+    }
+  }
+
+  function compileElement(element, vm) {
+    const regx = /\{\{(.*)\}\}/
+    const vmodel = 'v-model'
+    const { nodeType, attributes, nodeName } = element
+    // FIXME: h2中的 data.text 没有 new watcher 导致无法更新
+    if (nodeType === 1) { // input、h2 标签元素
+      [].forEach.call(attributes, (attr => {
+        if (attr.nodeName === vmodel && nodeName === 'INPUT') {
+          const key = attr.nodeValue
+          // TODO: 事件委托
+          element.addEventListener('input', function (e) {
+            vm[key] = e.target.value
+            console.log('input', e.target.value)
+          })
+          new Watcher(vm, element, key, "value")
+        }
+      }))
+    } else if (nodeType === 3) {
+      if (regx.test(element.nodeValue)) {
+        var key = RegExp.$1;
+        key = key.trim();
+        new Watcher(vm, element, key, "nodeValue");
+      }
+    }
+  }
+
+  function Vue(options) {
+    this.el = options.el;
+    this.data = options.data;
+    var root = document.getElementById(this.el);
+    observe(this.data, this);
+
+    root.appendChild(compile(root, this));
+  }
+
+  window.onload = function () {
+    window.app = new Vue({
+      el: 'app',
+      data: {
+        text: 'hello world'
+      }
+    })
+  }
+</script>
+</html>
